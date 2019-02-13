@@ -14,8 +14,6 @@ Watch this space for news as development progresses.
 
 ### Installation
 
-Install stable releases via Nuget; development releases are available via MyGet.
-
 | Package Name                        | NuGet           |
 |-------------------------------------|-----------------|
 | `EquinoxLabs.SVGSharpie`            | [![NuGet](https://img.shields.io/nuget/v/EquinoxLabs.SVGSharpie.svg)](https://www.nuget.org/packages/EquinoxLabs.SVGSharpie/) |
