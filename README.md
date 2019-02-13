@@ -12,4 +12,17 @@ Currently it has a fairly complete SVG Parsing engine, however it has not been h
 
 Watch this space for news as development progresses.
 
-[![codecov](https://codecov.io/gh/equinox2k/SVGSharpie/branch/master/graph/badge.svg)](https://codecov.io/gh/equinox2k/SVGSharpie)
+### Installation
+
+Install stable releases via Nuget; development releases are available via MyGet.
+
+| Package Name                        | NuGet           |
+|-------------------------------------|-----------------|
+| `EquinoxLabs.SVGSharpie`            | [![NuGet](https://img.shields.io/nuget/v/EquinoxLabs.SVGSharpie.svg)](https://www.nuget.org/packages/EquinoxLabs.SVGSharpie/) |
+| `EquinoxLabs.SVGSharpie.ImageSharp` | [![NuGet](https://img.shields.io/nuget/v/EquinoxLabs.SVGSharpie.ImageSharp.svg)](https://www.nuget.org/packages/SixLabors.ImageSharp.Drawing/) |
+
+### Build Status
+
+|             |Build Status|Code Coverage|
+|-------------|:----------:|:-----------:|
+|**Windows**  |[![Build Status](https://ci.appveyor.com/api/projects/status/m9pn907xdah3ca39/branch/master?svg=true)](https://ci.appveyor.com/project/equinox2k/svgsharpie/branch/master)|[![Code coverage](https://codecov.io/gh/equinox2k/svgsharpie/branch/master/graph/badge.svg)](https://codecov.io/gh/equinox2k/svgsharpie)|
