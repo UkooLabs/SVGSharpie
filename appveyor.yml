@@ -42,7 +42,7 @@ build_script:
 - cmd: build.cmd
 
 # test_script:
-  - ps: .\run-tests.ps1 $env:target_framework $env:is_32bit
+- ps: .\run-tests.ps1 $env:target_framework $env:is_32bit
 
 after_test:
   - cmd: appveyor PushArtifact "artifacts\EquinoxLabs.SVGSharpie.%APPVEYOR_BUILD_VERSION%.nupkg"
