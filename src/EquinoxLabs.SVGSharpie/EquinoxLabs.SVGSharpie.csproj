@@ -12,7 +12,7 @@
 
     <VersionPrefix Condition="$(packageversion) != ''">$(packageversion)</VersionPrefix>
     <VersionPrefix Condition="$(packageversion) == ''">0.0.1</VersionPrefix>
-    <TargetFrameworks>netstandard1.3;netstandard2.0;netcoreapp2.1;net462;net472</TargetFrameworks>
+    <TargetFrameworks>netstandard1.3;netstandard2.0;netcoreapp2.1;net472</TargetFrameworks>
     <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>EquinoxLabs.SVGSharpie</AssemblyName>
