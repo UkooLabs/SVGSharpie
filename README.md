@@ -25,4 +25,4 @@ Install stable releases via Nuget; development releases are available via MyGet.
 
 |             |Build Status|Code Coverage|
 |-------------|:----------:|:-----------:|
-|**Windows**  |[![Build Status](https://ci.appveyor.com/api/projects/status/m9pn907xdah3ca39/branch/master?svg=true)](https://ci.appveyor.com/project/equinox2k/svgsharpie/branch/master)|[![Code coverage](https://codecov.io/gh/equinox2k/svgsharpie/branch/master/graph/badge.svg)](https://codecov.io/gh/equinox2k/svgsharpie)|
+|**Windows**  |[![Build Status](https://ci.appveyor.com/api/projects/status/7wddmbvmbpt29rbw/branch/master?svg=true)](https://ci.appveyor.com/project/equinox2k/svgsharpie/branch/master)|[![Code coverage](https://codecov.io/gh/equinox2k/svgsharpie/branch/master/graph/badge.svg)](https://codecov.io/gh/equinox2k/svgsharpie)|
