@@ -50,20 +50,20 @@ before_build:
 build_script:
 - cmd: build.cmd
 
-test_script:
-- ps: .\run-tests.ps1 $env:target_framework $env:is_32bit
+# test_script:
+# - ps: .\run-tests.ps1 $env:target_framework $env:is_32bit
 
 after_test:
   - cmd: appveyor PushArtifact "artifacts\EquinoxLabs.SVGSharpie.%APPVEYOR_BUILD_VERSION%.nupkg"
   - cmd: appveyor PushArtifact "artifacts\EquinoxLabs.SVGSharpie.ImageSharp.%APPVEYOR_BUILD_VERSION%.nupkg"
 
-deploy:
+# deploy:
     # MyGet Deployment for builds & releases
-  - provider: NuGet
-    server: https://www.myget.org/F/eee/api/v2/package
-    symbol_server: https://www.myget.org/F/eeee/symbols/api/v2/package
-    api_key:
-      secure: V/lEHP0UeMWIpWd0fiNlY2IgbCnJKQlGdRksECdJbOBdaE20Fl0RNL7Wyqdddo4
-    artifact: /.*\.nupkg/
-    on:
-      branch: master
+#   - provider: NuGet
+#     server: https://www.myget.org/F/eee/api/v2/package
+#     symbol_server: https://www.myget.org/F/eeee/symbols/api/v2/package
+#     api_key:
+#       secure: V/lEHP0UeMWIpWd0fiNlY2IgbCnJKQlGdRksECdJbOBdaE20Fl0RNL7Wyqdddo4
+#     artifact: /.*\.nupkg/
+#     on:
+#       branch: master
