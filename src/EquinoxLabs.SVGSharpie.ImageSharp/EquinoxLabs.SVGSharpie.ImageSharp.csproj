@@ -18,7 +18,7 @@
     <AssemblyName>EquinoxLabs.SVGSharpie.ImageSharp</AssemblyName>
     <PackageId>EquinoxLabs.SVGSharpie.ImageSharp</PackageId>
     <PackageTags>SVG Render Core ImageSharp</PackageTags>
-    <PackageIconUrl>https://raw.githubusercontent.com/equinox2k/SVGSharpie/master/icons/SVGSharpie.128.png</PackageIconUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/equinox2k/SVGSharpie/master/icons/logo-128.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/equinox2k/SVGSharpie</PackageProjectUrl>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
     <RepositoryType>git</RepositoryType>
