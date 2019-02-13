@@ -11,3 +11,5 @@ The plan is to provide an interface for rendering, so that many vector drawing e
 Currently it has a fairly complete SVG Parsing engine, however it has not been hooked up to any form of rendering yet.
 
 Watch this space for news as development progresses.
+
+[![codecov](https://codecov.io/gh/equinox2k/SVGSharpie/branch/master/graph/badge.svg)](https://codecov.io/gh/equinox2k/SVGSharpie)
