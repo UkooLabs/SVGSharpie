@@ -1,3 +1,5 @@
+![](https://raw.githubusercontent.com/equinox2k/SVGSharpie/master/icons/logo-128.png)
+
 # SVGSharpie 
 
 *in early development*
