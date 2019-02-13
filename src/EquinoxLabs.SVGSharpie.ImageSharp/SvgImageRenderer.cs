@@ -6,26 +6,56 @@ using SixLabors.ImageSharp.Processing;
 
 namespace EquinoxLabs.SVGSharpie.ImageSharp
 {
+    /// <summary>
+    /// SVG image renderer
+    /// </summary>
     public static class SvgImageRenderer
     {
-
+        /// <summary>
+        /// Render SVG from xml string
+        /// </summary>
+        /// <typeparam name="TPixel"></typeparam>
+        /// <param name="content"></param>
+        /// <returns></returns>
         public static Image<TPixel> RenderFromString<TPixel>(string content) where TPixel : struct, IPixel<TPixel>
         {
             var document = SvgDocument.Parse(content);
             return RenderInner<TPixel>(document, null, null);
         }
 
+        /// <summary>
+        /// Render SVG from xml string
+        /// </summary>
+        /// <typeparam name="TPixel"></typeparam>
+        /// <param name="content"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public static Image<TPixel> RenderFromString<TPixel>(string content, int width, int height) where TPixel : struct, IPixel<TPixel>
         {
             var document = SvgDocument.Parse(content);
             return RenderInner<TPixel>(document, width, height);
         }
 
+        /// <summary>
+        /// Render SVG from SvgDocument
+        /// </summary>
+        /// <typeparam name="TPixel"></typeparam>
+        /// <param name="document"></param>
+        /// <returns></returns>
         public static Image<TPixel> RenderFromDocument<TPixel>(SvgDocument document) where TPixel : struct, IPixel<TPixel>
         {
             return RenderInner<TPixel>(document, null, null);
         }
 
+        /// <summary>
+        /// Render SVG from SvgDocument
+        /// </summary>
+        /// <typeparam name="TPixel"></typeparam>
+        /// <param name="document"></param>
+        /// <param name="width"></param>
+        /// <param name="height"></param>
+        /// <returns></returns>
         public static Image<TPixel> RenderFromDocument<TPixel>(SvgDocument document, int width, int height) where TPixel : struct, IPixel<TPixel>
         {
             return RenderInner<TPixel>(document, width, height);

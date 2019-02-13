@@ -46,7 +46,7 @@ if ( ($targetFramework -eq "netcoreapp2.1") -and ($env:CI -eq "True") -and ($is3
     $testRunnerCmd = ".\tests\CodeCoverage\CodeCoverage.cmd"
 }
 elseif ($targetFramework -eq "mono") {
-    $testDllPath = "$PSScriptRoot\tests\SVGSharpie.Tests\bin\Release\net462\SixLabors.ImageSharp.Tests.dll"
+    $testDllPath = "$PSScriptRoot\tests\EquinoxLabs.SVGSharpie.ImageSharp.Tests\bin\Release\net462\EquinoxLabs.SVGSharpie.ImageSharp.Tests.dll"
     VerifyPath($testDllPath, "test dll missing:")
 
     $xunitRunnerPath = "${env:HOMEPATH}\.nuget\packages\xunit.runner.console\2.3.1\tools\net452\"

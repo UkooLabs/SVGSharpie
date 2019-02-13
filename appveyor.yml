@@ -24,15 +24,6 @@ environment:
     - target_framework: net462
       is_32bit: True
     
-    #- target_framework: mono
-    #  is_32bit: False
-    #- target_framework: mono
-    #  is_32bit: True
-    #- target_framework: net47
-    #  is_32bit: False
-    #- target_framework: net47
-    #  is_32bit: True
-
 install:
   - ps: |
         if ($env:target_framework -eq "mono") { 
@@ -51,7 +42,7 @@ build_script:
 - cmd: build.cmd
 
 # test_script:
-# - ps: .\run-tests.ps1 $env:target_framework $env:is_32bit
+  - ps: .\run-tests.ps1 $env:target_framework $env:is_32bit
 
 after_test:
   - cmd: appveyor PushArtifact "artifacts\EquinoxLabs.SVGSharpie.%APPVEYOR_BUILD_VERSION%.nupkg"
