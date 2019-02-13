@@ -9,14 +9,17 @@ namespace SVGSharpie
         public static SvgColor FromSvgColorCode(string color)
         {
             if (color == null) throw new ArgumentNullException(nameof(color));
-            if (color.StartsWith("rgb", StringComparison.OrdinalIgnoreCase))
+            if (color.StartsWith("rgb", StringComparison.OrdinalIgnoreCase) || color.StartsWith("rgba", StringComparison.OrdinalIgnoreCase))
             {
+                var hasAlpha = color.StartsWith("rgba", StringComparison.OrdinalIgnoreCase);
+                var length = 3;
+                if (hasAlpha) { length = 4; }
                 var openIndex = color.IndexOf("(", StringComparison.OrdinalIgnoreCase) + 1;
                 var closeIndex = color.IndexOf(")", openIndex, StringComparison.OrdinalIgnoreCase);
                 if (openIndex > 0 && closeIndex > 0)
                 {
                     var values = color.Substring(openIndex, closeIndex - openIndex).Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries);
-                    if (values.Length != 3)
+                    if (values.Length != length)
                     {
                         throw new ArgumentException($"Invalid color '{color}'", nameof(color));
                     }
@@ -38,7 +41,15 @@ namespace SVGSharpie
                     var r = Math.Max(0, Math.Min(255, int.Parse(firstValue)));
                     var g = Math.Max(0, Math.Min(255, int.Parse(values[1].Trim())));
                     var b = Math.Max(0, Math.Min(255, int.Parse(values[2].Trim())));
-                    return new SvgColor((byte)r, (byte)g, (byte)b);
+                    if (hasAlpha)
+                    {
+                        var a = Math.Max(0, Math.Min(255, int.Parse(values[3].Trim())));
+                        return new SvgColor((byte)r, (byte)g, (byte)b, (byte)a);
+                    }
+                    else
+                    {
+                        return new SvgColor((byte)r, (byte)g, (byte)b);
+                    }
                 }
             }
             if (!color.StartsWith("#"))
@@ -56,12 +67,28 @@ namespace SVGSharpie
                 var b = byte.Parse(color.Substring(3, 1), NumberStyles.HexNumber);
                 return new SvgColor((byte)((r << 4) | r), (byte)((g << 4) | g), (byte)((b << 4) | b));
             }
+            if (color.Length == 5)      // #rgba
+            {
+                var r = byte.Parse(color.Substring(1, 1), NumberStyles.HexNumber);
+                var g = byte.Parse(color.Substring(2, 1), NumberStyles.HexNumber);
+                var b = byte.Parse(color.Substring(3, 1), NumberStyles.HexNumber);
+                var a = byte.Parse(color.Substring(4, 1), NumberStyles.HexNumber);
+                return new SvgColor((byte)((r << 4) | r), (byte)((g << 4) | g), (byte)((b << 4) | b));
+            }
             if (color.Length == 7)      // #rrggbb
             {
                 var r = byte.Parse(color.Substring(1, 2), NumberStyles.HexNumber);
                 var g = byte.Parse(color.Substring(3, 2), NumberStyles.HexNumber);
                 var b = byte.Parse(color.Substring(5, 2), NumberStyles.HexNumber);
                 return new SvgColor(r, g, b);
+            }
+            if (color.Length == 9)      // #rrggbbaa
+            {
+                var r = byte.Parse(color.Substring(1, 2), NumberStyles.HexNumber);
+                var g = byte.Parse(color.Substring(3, 2), NumberStyles.HexNumber);
+                var b = byte.Parse(color.Substring(5, 2), NumberStyles.HexNumber);
+                var a = byte.Parse(color.Substring(7, 2), NumberStyles.HexNumber);
+                return new SvgColor(r, g, b, a);
             }
             throw new ArgumentException($"invalid color '{color}'", nameof(color));
         }
@@ -73,6 +100,8 @@ namespace SVGSharpie
 
         private static readonly Dictionary<string, SvgColor> NamedKnownColors = new Dictionary<string, SvgColor>(StringComparer.OrdinalIgnoreCase)
         {
+            ["transparent"] = new SvgColor(0, 0, 0, 0),
+
             ["aliceblue"] = new SvgColor(240, 248, 255),
             ["antiquewhite"] = new SvgColor(250, 235, 215),
             ["aqua"] = new SvgColor(0, 255, 255),

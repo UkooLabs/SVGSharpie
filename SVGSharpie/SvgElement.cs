@@ -101,7 +101,10 @@ namespace SVGSharpie
             {
                 if ((_xAttributes = value) != null)
                 {
-                    Array.ForEach(value, attr => OnAnyAttribute(attr.LocalName, attr.Value));
+                    foreach (var attr in value)
+                    {
+                        OnAnyAttribute(attr.LocalName, attr.Value);
+                    }
                 }
             }
         }

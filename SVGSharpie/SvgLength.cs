@@ -101,7 +101,7 @@ namespace SVGSharpie
         /// </summary>
         public float GetAbsoluteValue(float? total)
         {
-            const float dpi = 72;
+            const float dpi = 90;
 
             // see https://www.w3.org/TR/SVG/coords.html#Units
 

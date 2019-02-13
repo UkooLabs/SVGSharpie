@@ -13,7 +13,7 @@ namespace SVGSharpie
         /// <param name="paint">the paint from which to create the paint server from</param>
         /// <param name="currentColor">the color value to use when <see cref="SvgPaintType"/> is CurrentColor</param>
         /// <returns>paint server or null if the <see cref="SvgPaintType"/> is <see cref="SvgPaintType.None"/></returns>
-        public static SvgPaintServer CreatePaintServer(SvgElement elementToPaint, SvgPaint paint, SvgColor currentColor)
+        public static SvgPaintServer CreatePaintServer(SvgElement elementToPaint, SvgPaint paint, SvgColor currentColor, float opacity)
         {
             if (paint == null) throw new ArgumentNullException(nameof(paint));
             if (elementToPaint == null) throw new ArgumentNullException(nameof(elementToPaint));
@@ -22,9 +22,9 @@ namespace SVGSharpie
                 case SvgPaintType.None:
                     return null;
                 case SvgPaintType.CurrentColor:
-                    return new SvgSolidColorPaintServer(currentColor, 1);
+                    return new SvgSolidColorPaintServer(currentColor, opacity);
                 case SvgPaintType.ExplicitColor:
-                    return new SvgSolidColorPaintServer(paint.Color, 1);
+                    return new SvgSolidColorPaintServer(paint.Color, opacity);
                 case SvgPaintType.IRIReference:
                     return CreatePaintServerFromReference(elementToPaint, paint.Reference);
                 default:

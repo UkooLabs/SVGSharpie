@@ -42,14 +42,14 @@ namespace SVGSharpie
         /// </summary>
         /// <returns>paint server to use to draw the fill of the current element</returns>
         public SvgPaintServer CreateFillPaintServer()
-            => SvgPaintServerFactory.CreatePaintServer(this, Style.Fill, Style.Color);
+            => SvgPaintServerFactory.CreatePaintServer(this, Style.Fill, Style.Color, Style.FillOpacity);
 
         /// <summary>
         /// Creates the paint server for drawing the outline of the current element
         /// </summary>
         /// <returns>paint server to use to draw the outline of the current element</returns>
         public SvgPaintServer CreateStrokePaintServer()
-            => SvgPaintServerFactory.CreatePaintServer(this, Style.Stroke, Style.Color);
+            => SvgPaintServerFactory.CreatePaintServer(this, Style.Stroke, Style.Color, Style.StrokeOpacity);
 
         [XmlIgnore]
         public float StrokeWidth => Style.StrokeWidth.Value.Value;

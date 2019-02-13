@@ -95,6 +95,19 @@ namespace SVGSharpie
         /// </summary>
         public StyleProperty<CssVisibilityType>? Visibility { get; set; }
 
+        /// <summary>
+        /// Gets or sets the current font size. If a percentage is used, the value represents 
+        /// a percentage of the current viewport.
+        /// </summary>
+        public StyleProperty<SvgLength>? FontSize { get; set; }
+
+        /// <summary>
+        /// Gets or sets the current font family.
+        /// </summary>
+        public StyleProperty<string[]> FontFamily { get; set; }
+
+        public StyleProperty<CssTextAnchorType>? TextAnchor { get; set; }
+
         public void Populate(string styleStr) => SvgElementStyleDataDeserializer.Populate(this, styleStr);
 
         public bool TryPopulateProperty(string name, string value) =>

@@ -23,7 +23,8 @@ namespace SVGSharpie
             {
                 if (!Rules.TryPopulateProperty(p.Key, p.Value))
                 {
-                    throw new Exception($"Unknown style property '{p.Key}:{p.Value}'");
+                    // we should act like other things and ignore unknow properites
+                    //throw new Exception($"Unknown style property '{p.Key}:{p.Value}'");
                 }
             }
         }

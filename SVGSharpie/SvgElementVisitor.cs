@@ -73,6 +73,13 @@
         public virtual void VisitTextElement(SvgTextElement element)
             => DefaultVisit(element);
 
+        public virtual void VisitTextSpanElement(SvgTextSpanElement element)
+            => DefaultVisit(element);
+
+        public virtual void VisitInlineTextSpanElement(SvgInlineTextSpanElement element)
+            => DefaultVisit(element);
+
+        
         public virtual void VisitMaskElement(SvgMaskElement element)
             => DefaultVisit(element);
 
@@ -156,6 +163,13 @@
 
         public virtual TResult VisitTextElement(SvgTextElement element)
             => DefaultVisit(element);
+
+        public virtual TResult VisitTextSpanElement(SvgTextSpanElement element)
+            => DefaultVisit(element);
+
+        public virtual TResult VisitInlineTextSpanElement(SvgInlineTextSpanElement element)
+            => DefaultVisit(element);
+        
 
         public virtual TResult VisitMaskElement(SvgMaskElement element)
             => DefaultVisit(element);

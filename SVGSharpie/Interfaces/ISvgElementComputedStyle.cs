@@ -76,10 +76,26 @@
         /// Gets the distance into the dash pattern to start the dash.
         /// </summary>
         StyleProperty<SvgLength> StrokeDashOffset { get; }
-        
+
         /// <summary>
         /// Gets the visibility value which controls visibility of an element
         /// </summary>
         StyleProperty<CssVisibilityType> Visibility { get; }
+
+        /// <summary>
+        /// Gets the current font size. If a percentage is used, the value represents 
+        /// a percentage of the current viewport.
+        /// </summary>
+        StyleProperty<SvgLength> FontSize { get; }
+
+        /// <summary>
+        /// Gets the current font family.
+        /// </summary>
+        StyleProperty<string[]> FontFamily { get; }
+
+        /// <summary>
+        /// Gets the text alignment to use while rendering textual elements.
+        /// </summary>
+        StyleProperty<CssTextAnchorType> TextAnchor { get; }
     }
 }

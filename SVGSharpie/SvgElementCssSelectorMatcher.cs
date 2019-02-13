@@ -160,6 +160,6 @@ namespace SVGSharpie
         }
 
         private static string GetTypeName(Type type)
-            => type.GetCustomAttribute<XmlTypeAttribute>().TypeName;
+            => type.GetTypeInfo().GetCustomAttribute<XmlTypeAttribute>().TypeName;
     }
 }

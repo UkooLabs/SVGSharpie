@@ -46,6 +46,12 @@ namespace SVGSharpie
 
         public StyleProperty<CssVisibilityType> Visibility => Select(Parent.Visibility, x => x.Visibility, i => i == CssVisibilityType.Inherit);
 
+        public StyleProperty<SvgLength> FontSize => Select(Parent.FontSize, x => x.FontSize);
+
+        public StyleProperty<string[]> FontFamily => Select(Parent.FontFamily, x => x.FontFamily, x => x == null || x.Length == 0);
+
+        public StyleProperty<CssTextAnchorType> TextAnchor => Select(Parent.TextAnchor, x => x.TextAnchor, x => x == CssTextAnchorType.Inherit);
+
         public SvgElementComputedStyle(SvgElementStyleData data, ISvgElementComputedStyle parent)
             : this(new[] { data ?? throw new ArgumentNullException() }, parent)
         {
@@ -113,7 +119,7 @@ namespace SVGSharpie
 
             return candidate ?? parentProperty;
         }
-        
+
         private ISvgElementComputedStyle _parent;
         private SvgElementStyleData[] _styleDatas;
     }

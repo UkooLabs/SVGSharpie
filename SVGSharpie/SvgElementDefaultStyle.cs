@@ -22,6 +22,12 @@
         public StyleProperty<SvgLength> StrokeDashOffset => StyleProperty.Create(new SvgLength(0));
         public StyleProperty<CssVisibilityType> Visibility => StyleProperty.Create(CssVisibilityType.Visible);
 
+        public StyleProperty<SvgLength> FontSize => StyleProperty.Create(new SvgLength(12));
+
+        public StyleProperty<string[]> FontFamily => StyleProperty.Create(new[] { "serif" });
+
+        public StyleProperty<CssTextAnchorType> TextAnchor => StyleProperty.Create(CssTextAnchorType.Start);
+
         private SvgElementDefaultStyle()
         {
         }
