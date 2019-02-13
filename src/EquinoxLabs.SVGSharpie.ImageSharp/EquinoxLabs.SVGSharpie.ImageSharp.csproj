@@ -7,7 +7,7 @@
     <Company>Equinox Labs</Company>
     <Copyright>Copyright (c) Equinox Labs and contributors.</Copyright>
     <Product>EquinoxLabs.SVGSharpie.ImageSharp</Product>
-    <Description>A cross-platform library for parsing SVG files; written in C#</Description>
+    <Description>A cross-platform library for rendering SVG files using SVGSharpie and ImageSharp; written in C#</Description>
     <NeutralLanguage>en</NeutralLanguage>
 
     <VersionPrefix Condition="$(packageversion) != ''">$(packageversion)</VersionPrefix>
