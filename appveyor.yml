@@ -29,6 +29,7 @@ environment:
       is_32bit: True
     
 install:
+  - cinst docfx
   - ps: |
         if ($env:target_framework -eq "mono") { 
           if ($env:is_32bit -eq "True") { 
@@ -41,9 +42,6 @@ install:
 before_build:
   - git submodule -q update --init
   - cmd: dotnet --info
-  
-install:
-  - cinst docfx
 
 build_script:
 - ps: .\build.ps1
