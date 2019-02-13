@@ -58,10 +58,10 @@ after_test:
   - cmd: appveyor PushArtifact "artifacts\EquinoxLabs.SVGSharpie.ImageSharp.%APPVEYOR_BUILD_VERSION%.nupkg"
 
 deploy:
-    provider: NuGet
-    api_key:
-      secure: oy2i4t6zwkekyqmjectaryrrnbne63uejnmioqsdxdugmi
-    skip_symbols: false
-    artifact: /.*\.nupkg/
-    on:
-      branch: master
+  provider: NuGet
+  api_key:
+    secure: mDwn5Rqiu4ys9luHvWQo7AAd99VmHiApFyS/lrZhTvdnMj1IA/HiYb2LVeet3Vet
+  skip_symbols: false
+  artifact: /.*\.nupkg/
+  on:
+    branch: master
