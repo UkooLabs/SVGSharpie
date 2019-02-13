@@ -67,7 +67,7 @@ elseif ($targetFramework -eq "mono") {
     $testRunnerCmd = "& `"${monoPath}`" .\xunit.console.exe `"${testDllPath}`""
 }
 else {
-    cd .\tests\ImageSharp.Tests
+    cd .\tests\EquinoxLabs.SVGSharpie.ImageSharp.Tests
     $xunitArgs = "-nobuild -c Release -framework $targetFramework"
 
     if ($targetFramework -eq "netcoreapp2.1") {
