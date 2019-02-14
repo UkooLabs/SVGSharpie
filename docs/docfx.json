@@ -14,7 +14,11 @@
           "cwd": ".."
         }
       ],
-      "dest": "api"
+      "dest": "api",
+      "properties": 
+      { 
+        "TargetFramework": "netstandard1.3" 
+      }
     }
   ],
   "build": {
