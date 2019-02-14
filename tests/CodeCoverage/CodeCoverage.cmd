@@ -17,5 +17,6 @@ tests\CodeCoverage\OpenCover.4.6.519\tools\OpenCover.Console.exe -target:"dotnet
 if %errorlevel% neq 0 exit /b %errorlevel%
 
 SET PATH=C:\python34;C:\python34\Scripts;%PATH%
+python -m pip install --upgrade pip
 pip install codecov
 codecov -f "SVGSharpie.Coverage.xml"
