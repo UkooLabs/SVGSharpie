@@ -13,7 +13,7 @@ environment:
   github_email:
     secure: mg8/u955wiAtLkwq6JZ/22mztHmzPrLcgSlW/PkFVgU=
   codecov_token:
-    secure: UEBfujzStd1ZfNS67/HD+Iy5NYsAzPFTAFD3Nwgg2uP6bXi/GGT6qMUe9Li76yET
+    secure: KSzQogKvg4E6qxlcUDOdiRspPlbrAs+cj/w1fElIQe9vwRGF18Rehk8o6HmRyVIm
   matrix:
     - target_framework: netcoreapp2.1
       is_32bit: False
