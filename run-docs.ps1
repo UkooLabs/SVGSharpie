@@ -6,10 +6,6 @@ param (
 )
 
 Write-Host "Processing Documents:"
-Write-Host $user_profile
-Write-Host $github_access_token
-Write-Host $github_email
-Write-Host $github_user
 
 git config --global credential.helper store
 Add-Content "$user_profile\.git-credentials" "https://$($github_access_token):x-oauth-basic@github.com`n"
