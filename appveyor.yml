@@ -55,9 +55,9 @@ after_test:
 
 deploy_script:
 - git config --global credential.helper store
-- ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
+- ps: Add-Content "equinox2k.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
 - git config --global user.email %github_email%
-- git config --global user.name "markvincze"
+- git config --global user.name "equinox2k"
 - bash release-docs.sh
 
 deploy:
