@@ -19,4 +19,4 @@ if %errorlevel% neq 0 exit /b %errorlevel%
 SET PATH=C:\python37;C:\python37\Scripts;%PATH%
 python -m pip install --upgrade pip
 pip install codecov
-codecov -f "SVGSharpie.Coverage.xml"
+codecov -f "SVGSharpie.Coverage.xml" -t "%codecov_token%"
