@@ -4,12 +4,12 @@
       "src": [
         {
           "files": [
-            "src/**.csproj"
+            "src/EquinoxLabs.SVGSharpie/EquinoxLabs.SVGSharpie.csproj",
+            "src/EquinoxLabs.SVGSharpie.ImageSharp/EquinoxLabs.SVGSharpie.ImageSharp.csproj"
           ],
           "exclude": [
-            "**/obj/**",
-            "**/bin/**",
-            "_site/**"
+            "obj/**",
+            "site/**"
           ],
           "cwd": ".."
         }
@@ -26,45 +26,27 @@
       {
         "files": [
           "api/**.yml",
-          "api/index.md"
+          "api/*.md",
+          "api/toc.yml"
         ]
       },
       {
         "files": [
-          "articles/**.md",
-          "articles/**/toc.yml",
-          "toc.yml",
-          "*.md"
-        ],
-        "exclude": [
-          "obj/**",
-          "_site/**"
+          "fusion/*.yml"
         ]
-      }
-    ],
-    "resource": [
+      },
       {
         "files": [
-          "images/**"
+          "*.md",
+          "*.yml",
         ],
         "exclude": [
           "obj/**",
-          "_site/**"
+          "site/**"
         ]
       }
     ],
-    "overwrite": [
-      {
-        "files": [
-          "apidoc/**.md"
-        ],
-        "exclude": [
-          "obj/**",
-          "_site/**"
-        ]
-      }
-    ],
-    "dest": "_site",
+    "dest": "site",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
