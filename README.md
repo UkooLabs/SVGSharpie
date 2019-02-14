@@ -24,3 +24,6 @@ Watch this space for news as development progresses.
 |             |Build Status|Code Coverage|
 |-------------|:----------:|:-----------:|
 |**Windows**  |[![Build Status](https://ci.appveyor.com/api/projects/status/7wddmbvmbpt29rbw/branch/master?svg=true)](https://ci.appveyor.com/project/equinox2k/svgsharpie/branch/master)|[![Code coverage](https://codecov.io/gh/equinox2k/svgsharpie/branch/master/graph/badge.svg)](https://codecov.io/gh/equinox2k/svgsharpie)|
+
+
+[Documentation](https://equinox2k.github.io/api/EquinoxLabs.SVGSharpie.html)
