@@ -1,7 +1,10 @@
 version: 1.0.0.{build}
 image: Visual Studio 2017
 
-# prevent the double build when a branch has an active PR
+branches:
+  only:
+    - master
+
 skip_branch_with_pr: true
 
 environment:
@@ -12,19 +15,14 @@ environment:
   matrix:
     - target_framework: netcoreapp2.1
       is_32bit: False
-
     - target_framework: netcoreapp2.1
       is_32bit: True
-
     - target_framework: net472
       is_32bit: False
-
     - target_framework: net472
       is_32bit: True
-
     - target_framework: net462
       is_32bit: False
-
     - target_framework: net462
       is_32bit: True
     
@@ -45,8 +43,6 @@ before_build:
 
 build_script:
 - ps: .\build.ps1
-
-# test_script:
 - ps: .\run-tests.ps1 $env:target_framework $env:is_32bit
 
 after_test:
@@ -54,8 +50,9 @@ after_test:
   - cmd: appveyor PushArtifact "artifacts\EquinoxLabs.SVGSharpie.ImageSharp.%APPVEYOR_BUILD_VERSION%.nupkg"
 
 deploy_script:
+- ps: .\run-docs.ps1
 - git config --global credential.helper store
-- ps: Add-Content "equinox2k.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
+- ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
 - git config --global user.email %github_email%
 - git config --global user.name "equinox2k"
 - bash release-docs.sh
