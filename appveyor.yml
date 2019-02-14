@@ -30,6 +30,7 @@ environment:
     
 install:
   - cinst docfx
+  - cinst codecov
   - ps: |
         if ($env:target_framework -eq "mono") { 
           if ($env:is_32bit -eq "True") { 
