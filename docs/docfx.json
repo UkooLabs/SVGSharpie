@@ -5,24 +5,6 @@
         {
           "files": [
             "src/EquinoxLabs.SVGSharpie/EquinoxLabs.SVGSharpie.csproj",
-          ],
-          "exclude": [
-            "obj/**",
-            "site/**"
-          ],
-          "cwd": ".."
-        }
-      ],
-      "dest": "SVGSharpie",
-      "properties": 
-      { 
-        "TargetFramework": "netstandard1.3" 
-      }
-    },
-    {
-      "src": [
-        {
-          "files": [
             "src/EquinoxLabs.SVGSharpie.ImageSharp/EquinoxLabs.SVGSharpie.ImageSharp.csproj"
           ],
           "exclude": [
@@ -32,7 +14,7 @@
           "cwd": ".."
         }
       ],
-      "dest": "SVGSharpie.ImageSharp",
+      "dest": "api",
       "properties": 
       { 
         "TargetFramework": "netstandard1.3" 
@@ -43,16 +25,9 @@
     "content": [
       {
         "files": [
-          "SVGSharpie/**.yml",
-          "SVGSharpie/*.md",
-          "SVGSharpie/toc.yml"
-        ]
-      },
-      {
-        "files": [
-          "SVGSharpie.ImageSharp/**.yml",
-          "SVGSharpie.ImageSharp/*.md",
-          "SVGSharpie.ImageSharp/toc.yml"
+          "api/**.yml",
+          "api/*.md",
+          "api/toc.yml"
         ]
       },
       {
