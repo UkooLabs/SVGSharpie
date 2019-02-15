@@ -1,6 +1,7 @@
 ### YamlMime:TableOfContent
 - name: SVGSharpie
-  href: ../api/toc.yml
+  href: ../api1/toc.yml
+  homepage: ../api1/index.md
 - name: SVGSharpie.ImageSharp
-  href: ../api/toc.yml
-  homepage: ../api/index.md
+  href: ../api2/toc.yml
+  homepage: ../api2/index.md

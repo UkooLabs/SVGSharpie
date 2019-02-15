@@ -4,17 +4,35 @@
       "src": [
         {
           "files": [
-            "src/EquinoxLabs.SVGSharpie/EquinoxLabs.SVGSharpie.csproj",
-            "src/EquinoxLabs.SVGSharpie.ImageSharp/EquinoxLabs.SVGSharpie.ImageSharp.csproj"
+            "src/EquinoxLabs.SVGSharpie/EquinoxLabs.SVGSharpie.csproj"
           ],
           "exclude": [
             "obj/**",
-            "site/**"
+            "_site/**"
           ],
           "cwd": ".."
         }
       ],
-      "dest": "api",
+      "dest": "api1",
+      "properties": 
+      { 
+        "TargetFramework": "netstandard1.3" 
+      }
+    },
+    {
+      "src": [
+        {
+          "files": [
+            "src/EquinoxLabs.SVGSharpie.ImageSharp/EquinoxLabs.SVGSharpie.ImageSharp.csproj"
+          ],
+          "exclude": [
+            "obj/**",
+            "_site/**"
+          ],
+          "cwd": ".."
+        }
+      ],
+      "dest": "api2",
       "properties": 
       { 
         "TargetFramework": "netstandard1.3" 
@@ -25,14 +43,33 @@
     "content": [
       {
         "files": [
-          "api/**.yml",
-          "api/*.md",
-          "api/toc.yml"
+          "api1/**.yml",
+          "api1/*.md",
+          "api1/toc.yml"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      },
+      {
+        "files": [
+          "api2/**.yml",
+          "api2/*.md",
+          "api2/toc.yml"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
         ]
       },
       {
         "files": [
           "fusion/*.yml"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
         ]
       },
       {
@@ -42,11 +79,11 @@
         ],
         "exclude": [
           "obj/**",
-          "site/**"
+          "_site/**"
         ]
       }
     ],
-    "dest": "site",
+    "dest": "_site",
     "globalMetadataFiles": [],
     "fileMetadataFiles": [],
     "template": [
