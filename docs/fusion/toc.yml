@@ -3,5 +3,5 @@
   href: ../svgsharpie/toc.yml
   homepage: ../svgsharpie/index.md
 - name: SVGSharpie.ImageSharp
-  href: ../api2/toc.yml
-  homepage: ../api2/index.md
+  href: ../imagesharp/toc.yml
+  homepage: ../imagesharp/index.md

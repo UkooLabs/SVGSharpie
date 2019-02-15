@@ -32,7 +32,7 @@
           "cwd": ".."
         }
       ],
-      "dest": "api2",
+      "dest": "imagesharp",
       "properties": 
       { 
         "TargetFramework": "netstandard1.3" 
@@ -54,9 +54,9 @@
       },
       {
         "files": [
-          "api2/**.yml",
-          "api2/*.md",
-          "api2/toc.yml"
+          "imagesharp/**.yml",
+          "imagesharp/*.md",
+          "imagesharp/toc.yml"
         ],
         "exclude": [
           "obj/**",
