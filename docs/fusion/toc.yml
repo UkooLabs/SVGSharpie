@@ -2,6 +2,6 @@
 - name: SVGSharpie
   href: ../svgsharpie/toc.yml
   homepage: ../svgsharpie/index.md
-- name: SVGSharpie.ImageSharp
+- name: ImageSharp
   href: ../imagesharp/toc.yml
   homepage: ../imagesharp/index.md
