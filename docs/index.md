@@ -1,3 +1,3 @@
 Welcome to Equinox Labs documentation
 
-[API Documentation](/api1/EquinoxLabs.SVGSharpie.html)
+[API Documentation](/svgsharpie/index.html)

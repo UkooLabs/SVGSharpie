@@ -13,7 +13,7 @@
           "cwd": ".."
         }
       ],
-      "dest": "api1",
+      "dest": "svgsharpie",
       "properties": 
       { 
         "TargetFramework": "netstandard1.3" 
@@ -43,9 +43,9 @@
     "content": [
       {
         "files": [
-          "api1/**.yml",
-          "api1/*.md",
-          "api1/toc.yml"
+          "svgsharpie/**.yml",
+          "svgsharpie/*.md",
+          "svgsharpie/toc.yml"
         ],
         "exclude": [
           "obj/**",
