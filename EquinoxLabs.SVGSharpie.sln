@@ -2,9 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EquinoxLabs.SVGSharpie", "src\EquinoxLabs.SVGSharpie\EquinoxLabs.SVGSharpie.csproj", "{3A4E9949-3F70-4C63-BC13-EB296825C7C6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquinoxLabs.SVGSharpie", "src\EquinoxLabs.SVGSharpie\EquinoxLabs.SVGSharpie.csproj", "{3A4E9949-3F70-4C63-BC13-EB296825C7C6}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EquinoxLabs.SVGSharpie.ImageSharp", "src\EquinoxLabs.SVGSharpie.ImageSharp\EquinoxLabs.SVGSharpie.ImageSharp.csproj", "{E4E9C756-3BDE-46B4-AEAD-9837A7316746}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquinoxLabs.SVGSharpie.ImageSharp", "src\EquinoxLabs.SVGSharpie.ImageSharp\EquinoxLabs.SVGSharpie.ImageSharp.csproj", "{E4E9C756-3BDE-46B4-AEAD-9837A7316746}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EquinoxLabs.SVGSharpie.ImageSharp.Tests", "tests\EquinoxLabs.SVGSharpie.ImageSharp.Tests\EquinoxLabs.SVGSharpie.ImageSharp.Tests.csproj", "{46F9A6AA-1E92-4ADE-9C2B-536EFBEFAA3C}"
 EndProject
