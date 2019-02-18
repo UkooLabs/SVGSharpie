@@ -64,7 +64,7 @@ namespace EquinoxLabs.SVGSharpie.ImageSharp
         private static Image<TPixel> RenderInner<TPixel>(SvgDocument document, int? targetWidth, int? targetHeight) where TPixel : struct, IPixel<TPixel>
         {
             float? width = targetWidth ?? document.RootElement.ViewWidth;
-            float? height = targetHeight ?? document.RootElement.ViewWidth;
+            float? height = targetHeight ?? document.RootElement.ViewHeight;
 
             if (!width.HasValue || !height.HasValue)
             {

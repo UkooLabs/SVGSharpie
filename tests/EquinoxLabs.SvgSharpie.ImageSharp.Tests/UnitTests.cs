@@ -1,8 +1,11 @@
 using System.IO;
 using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Processing;
+using SixLabors.ImageSharp.Advanced;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
 using Xunit;
+using SixLabors.Primitives;
 
 namespace EquinoxLabs.SVGSharpie.ImageSharp.Tests
 {
@@ -17,8 +20,11 @@ namespace EquinoxLabs.SVGSharpie.ImageSharp.Tests
         {
             using (Image<Rgba32> svgImg = SvgImageRenderer.RenderFromString<Rgba32>(File.ReadAllText(svgFilePath)))
             using (var pngImg = Image.Load(pngFilePath))
+            using (var result = new Image<Rgba32>(pngImg.Width * 2, pngImg.Height))
             {
-                svgImg.Save(resultFilePath);
+                result.Mutate(x => x.DrawImage(pngImg, new Point(0, 0), 1.0f));
+                result.Mutate(x => x.DrawImage(svgImg, new Point(pngImg.Width, 0), 1.0f));
+                result.Save(resultFilePath);
                 ImageComparer.Tolerant(perPixelManhattanThreshold: 500).VerifySimilarity(svgImg, pngImg);
             }
         }
@@ -29,8 +35,11 @@ namespace EquinoxLabs.SVGSharpie.ImageSharp.Tests
         {
             using (Image<Rgba32> svgImg = SvgImageRenderer.RenderFromString<Rgba32>(File.ReadAllText(svgFilePath)))
             using (var pngImg = Image.Load(pngFilePath))
+            using (var result = new Image<Rgba32>(pngImg.Width * 2, pngImg.Height))
             {
-                svgImg.Save(resultFilePath);
+                result.Mutate(x => x.DrawImage(pngImg, new Point(0, 0), 1.0f));
+                result.Mutate(x => x.DrawImage(svgImg, new Point(pngImg.Width, 0), 1.0f));
+                result.Save(resultFilePath);
                 ImageComparer.Tolerant(perPixelManhattanThreshold: 500).VerifySimilarity(svgImg, pngImg);
             }
         }
