@@ -13,7 +13,19 @@ namespace EquinoxLabs.SVGSharpie.ImageSharp.Tests
 
         [Theory]
         [MemberData(nameof(SVG11Tests))]
-        public void SvgTest(string svgFilePath, string pngFilePath, string resultFilePath)
+        public void SvgTest11(string svgFilePath, string pngFilePath, string resultFilePath)
+        {
+            using (Image<Rgba32> svgImg = SvgImageRenderer.RenderFromString<Rgba32>(File.ReadAllText(svgFilePath)))
+            using (var pngImg = Image.Load(pngFilePath))
+            {
+                svgImg.Save(resultFilePath);
+                ImageComparer.Tolerant(perPixelManhattanThreshold: 500).VerifySimilarity(svgImg, pngImg);
+            }
+        }
+
+        [Theory]
+        [MemberData(nameof(SVG12Tests))]
+        public void SvgTest12(string svgFilePath, string pngFilePath, string resultFilePath)
         {
             using (Image<Rgba32> svgImg = SvgImageRenderer.RenderFromString<Rgba32>(File.ReadAllText(svgFilePath)))
             using (var pngImg = Image.Load(pngFilePath))
