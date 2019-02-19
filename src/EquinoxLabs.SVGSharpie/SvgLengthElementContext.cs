@@ -17,6 +17,11 @@ namespace EquinoxLabs.SVGSharpie
             _dir = dir;
         }
 
+        public override float GetFontSize()
+        {
+            return _element.Style.FontSize.Value.Value;
+        }
+
         public override float ComputeTotalLength()
         {
             var parent = GetParentSvgElementOrThrow();

@@ -66,10 +66,10 @@ namespace EquinoxLabs.SVGSharpie
                     case "%":
                         LengthType = SvgLengthType.Percentage;
                         break;
-                    case "ems":
+                    case "em":
                         LengthType = SvgLengthType.ems;
                         break;
-                    case "exs":
+                    case "ex":
                         LengthType = SvgLengthType.exs;
                         break;
                     case "px":
@@ -127,8 +127,9 @@ namespace EquinoxLabs.SVGSharpie
                     }
                     return (ValueInSpecifiedUnits / 100) * total.Value;
                 case SvgLengthType.exs:
+                    return ValueInSpecifiedUnits * (_context.GetFontSize() * 0.5f); //TODO: get height of x see https://www.w3.org/TR/css-values-4/#font-relative-lengths
                 case SvgLengthType.ems:
-                    throw new NotSupportedException();
+                    return ValueInSpecifiedUnits * _context.GetFontSize();
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -143,10 +144,10 @@ namespace EquinoxLabs.SVGSharpie
                     suffix = "%";
                     break;
                 case SvgLengthType.ems:
-                    suffix = "ems";
+                    suffix = "em";
                     break;
                 case SvgLengthType.exs:
-                    suffix = "exs";
+                    suffix = "ex";
                     break;
                 case SvgLengthType.px:
                     suffix = "px";

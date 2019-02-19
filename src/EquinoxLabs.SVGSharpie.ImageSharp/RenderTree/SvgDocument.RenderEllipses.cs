@@ -16,12 +16,12 @@ namespace EquinoxLabs.SVGSharpie.ImageSharp.Dom
         {
             base.VisitCircleElement(element);
 
-            this.RenderShapeToCanvas(element, new EllipsePolygon(element.Cx.Value.Value, element.Cy.Value.Value, element.R.Value.Value));
+            this.RenderShapeToCanvas(element, new EllipsePolygon(element.Cx?.Value ?? 0, element.Cy?.Value ?? 0, element.R.Value.Value));
         }
 
         public override void VisitEllipseElement(SvgEllipseElement element)
         {
-            this.RenderShapeToCanvas(element, new EllipsePolygon(element.Cx.Value.Value, element.Cy.Value.Value, element.Rx.Value.Value * 2, element.Ry.Value.Value * 2));
+            this.RenderShapeToCanvas(element, new EllipsePolygon(element.Cx?.Value ?? 0, element.Cy?.Value ?? 0, element.Rx.Value.Value * 2, element.Ry.Value.Value * 2));
         }
     }
 }
