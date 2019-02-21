@@ -112,41 +112,7 @@ namespace EquinoxLabs.SVGSharpie
 
         private static string[] SplitStringOfNumbers(string str)
         {
-            var result = new List<string>();
-            var builder = new StringBuilder(16);
-
-            for (var i = 0; i < str.Length; i++)
-            {
-                var c = str[i];
-                if (c == ' ' || c == ',')
-                {
-                    if (builder.Length > 0)
-                    {
-                        result.Add(builder.ToString());
-                        builder.Clear();
-                    }
-
-                    continue;
-                }
-
-                if (c == '-')
-                {
-                    if (builder.Length > 0)
-                    {
-                        result.Add(builder.ToString());
-                        builder.Clear();
-                    }
-                }
-
-                builder.Append(c);
-            }
-
-            if (builder.Length > 0)
-            {
-                result.Add(builder.ToString());
-            }
-
-            return result.ToArray();
+            return str.Replace(",", " ").Split(" ", StringSplitOptions.RemoveEmptyEntries);
         }
     }
 }
