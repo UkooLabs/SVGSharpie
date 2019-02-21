@@ -46,5 +46,16 @@ namespace EquinoxLabs.SVGSharpie.ImageSharp.Tests
                 //ImageComparer.Tolerant(perPixelManhattanThreshold: 500).VerifySimilarity(svgImg, pngImg);
             }
         }
+
+        [Fact]
+        public void QuickTest()
+        {
+            var svgFilePath = Path.Combine(Utils.TestFolder, "Test", "Test.svg");
+            Debug.WriteLine($"Testing QuickTest: {Path.GetFileName(svgFilePath)} in {Path.GetDirectoryName(svgFilePath)}");
+            using (Image<Rgba32> svgImg = SvgImageRenderer.RenderFromString<Rgba32>(File.ReadAllText(svgFilePath)))
+            {
+                svgImg.Save(Path.Combine(Path.GetDirectoryName(svgFilePath), Path.GetFileNameWithoutExtension(svgFilePath) + ".png"));
+            }
+        }
     }
 }
