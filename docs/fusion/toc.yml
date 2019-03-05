@@ -5,6 +5,6 @@
 - name: ImageSharp
   href: ../imagesharp/toc.yml
   homepage: ../imagesharp/index.md
-  - name: DynamicPDF
+- name: DynamicPDF
   href: ../dynamicpdf/toc.yml
   homepage: ../dynamicpdf/index.md
