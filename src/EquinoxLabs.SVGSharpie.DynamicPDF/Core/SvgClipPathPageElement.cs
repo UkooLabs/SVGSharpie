@@ -7,11 +7,11 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
     internal sealed class SvgClipPathPageElement : PageElement
     {
-        private readonly PdfSpotColor _spotColorInk;
+        private readonly PdfSpotColor _spotColorOverride;
 
-        public SvgClipPathPageElement(PageElement child, SvgClipPathElement clipPath, SvgMatrix clipPathParentTransform, PdfSpotColor spotColorInk)
+        public SvgClipPathPageElement(PageElement child, SvgClipPathElement clipPath, SvgMatrix clipPathParentTransform, PdfSpotColor spotColorOverride)
         {
-            _spotColorInk = spotColorInk;
+            _spotColorOverride = spotColorOverride;
             _child = child ?? throw new ArgumentNullException(nameof(child));
             _clipPath = clipPath ?? throw new ArgumentNullException(nameof(clipPath));
             _clipPathParentTransform = clipPathParentTransform ?? throw new ArgumentNullException(nameof(clipPathParentTransform));
@@ -27,7 +27,7 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 
             writer.Write_q_();
             {
-                var clippingAreaWriter = new SvgClipPathMaskWriterVisitor(writer, _clipPathParentTransform, _spotColorInk);
+                var clippingAreaWriter = new SvgClipPathMaskWriterVisitor(writer, _clipPathParentTransform, _spotColorOverride);
                 _clipPath.Accept(clippingAreaWriter);
                 if (clippingAreaWriter.ClippingAreaPainted)
                 {

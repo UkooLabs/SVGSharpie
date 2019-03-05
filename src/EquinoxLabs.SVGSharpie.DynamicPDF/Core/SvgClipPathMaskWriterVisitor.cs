@@ -8,13 +8,13 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
     internal sealed class SvgClipPathMaskWriterVisitor : SvgElementVisitor
     {
-        private readonly PdfSpotColor _spotColorInk;
+        private readonly PdfSpotColor _spotColorOverride;
 
         public bool ClippingAreaPainted { get; private set; }
 
-        public SvgClipPathMaskWriterVisitor(PageWriter writer, SvgMatrix rootTransform, PdfSpotColor spotColorInk)
+        public SvgClipPathMaskWriterVisitor(PageWriter writer, SvgMatrix rootTransform, PdfSpotColor spotColorOverride)
         {
-            _spotColorInk = spotColorInk;
+            _spotColorOverride = spotColorOverride;
             _writer = writer ?? throw new ArgumentNullException(nameof(writer));
             _matrixStack.Push(SvgMatrix.Identity);
             PushMatrix(rootTransform);
@@ -73,7 +73,7 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
                     .ConvertAllLinesAndCurvesToCubicCurves()
                     .MultiplyByMatrix(CurrentMatrix);
 
-                var svgToPdfPathConverter = new SvgPathSegToDynamicPdfPathsConverter(graphicsElement, null, 0, _spotColorInk);
+                var svgToPdfPathConverter = new SvgPathSegToDynamicPdfPathsConverter(graphicsElement, null, 0, _spotColorOverride);
                 pathsToDraw.ForEach(i => i.Accept(svgToPdfPathConverter));
                 
                 foreach (var path in svgToPdfPathConverter.Paths)

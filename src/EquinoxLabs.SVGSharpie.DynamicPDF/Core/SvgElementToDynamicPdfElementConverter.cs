@@ -24,13 +24,13 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
         private readonly float _pageHeight;
         private readonly Stack<SvgMatrix> _matrixStack = new Stack<SvgMatrix>();
         private float _groupAlpha = 1;
-        private PdfSpotColor _spotColorInk;
+        private PdfSpotColor _spotColorOverride;
 
         private SvgMatrix CurrentMatrix => _matrixStack.Peek();
 
-        public SvgElementToDynamicPdfElementConverter(SvgSvgElement rootSvgElement, VectorElementPdfPageViewport pageViewport, float pageHeight, PdfSpotColor spotColorInk)
+        public SvgElementToDynamicPdfElementConverter(SvgSvgElement rootSvgElement, VectorElementPdfPageViewport pageViewport, float pageHeight, PdfSpotColor spotColorOverride)
         {
-            _spotColorInk = spotColorInk;
+            _spotColorOverride = spotColorOverride;
             _rootSvgElement = rootSvgElement ?? throw new ArgumentNullException(nameof(rootSvgElement));
             _pageViewport = pageViewport ?? throw new ArgumentNullException(nameof(pageViewport));
             _pageHeight = pageHeight;
@@ -165,7 +165,7 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 
             var fillOpacity = Math.Max(0, Math.Min(1, graphicsElement.Style.FillOpacity));
             var strokeOpacity = Math.Max(0, Math.Min(1, graphicsElement.Style.StrokeOpacity));
-            var svgToPdfPathConverter = new SvgPathSegToDynamicPdfPathsConverter(graphicsElement, _pageViewport, _pageHeight, _spotColorInk);
+            var svgToPdfPathConverter = new SvgPathSegToDynamicPdfPathsConverter(graphicsElement, _pageViewport, _pageHeight, _spotColorOverride);
 
             bool IsPaintedPath(Path path) => path.FillColor != null || path.LineColor != null;
 
@@ -212,7 +212,7 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
                     // clipPath defines the area to be rendered, no children, nothing to render
                     return null;
                 }
-                return new SvgClipPathPageElement(result, clipPath, matrix, _spotColorInk);
+                return new SvgClipPathPageElement(result, clipPath, matrix, _spotColorOverride);
             }
             return result;
         }

@@ -51,6 +51,7 @@ build_script:
 after_test:
   - cmd: appveyor PushArtifact "artifacts\EquinoxLabs.SVGSharpie.%APPVEYOR_BUILD_VERSION%.nupkg"
   - cmd: appveyor PushArtifact "artifacts\EquinoxLabs.SVGSharpie.ImageSharp.%APPVEYOR_BUILD_VERSION%.nupkg"
+  - cmd: appveyor PushArtifact "artifacts\EquinoxLabs.SVGSharpie.DynamicPDF.%APPVEYOR_BUILD_VERSION%.nupkg"
 
 deploy:
   provider: NuGet

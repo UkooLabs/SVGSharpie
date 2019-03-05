@@ -6,9 +6,9 @@
 
 SVGSharpie is intended to be bring SVG Rendering to .NET Core
 
-The plan is to provide an interface for rendering, so that many vector drawing engines could be used. We plan to initially target ImageSharp by SixLabours. Additionally we would like to utilise a PDF engine as an additional backend.
+Current rendering implementations include ImageSharp by SixLabours & DynamicPDF by ceTe Software.
 
-Currently it has a fairly complete SVG Parsing engine, however it has not been hooked up to any form of rendering yet.
+Currently it has a fairly complete SVG Parsing engine
 
 Watch this space for news as development progresses.
 
@@ -17,7 +17,8 @@ Watch this space for news as development progresses.
 | Package Name                        | NuGet           |
 |-------------------------------------|-----------------|
 | `EquinoxLabs.SVGSharpie`            | [![NuGet](https://img.shields.io/nuget/v/EquinoxLabs.SVGSharpie.svg)](https://www.nuget.org/packages/EquinoxLabs.SVGSharpie/) |
-| `EquinoxLabs.SVGSharpie.ImageSharp` | [![NuGet](https://img.shields.io/nuget/v/EquinoxLabs.SVGSharpie.ImageSharp.svg)](https://www.nuget.org/packages/SixLabors.ImageSharp.Drawing/) |
+| `EquinoxLabs.SVGSharpie.ImageSharp` | [![NuGet](https://img.shields.io/nuget/v/EquinoxLabs.SVGSharpie.ImageSharp.svg)](https://www.nuget.org/packages/EquinoxLabs.SVGSharpie.ImageSharp/) |
+| `EquinoxLabs.SVGSharpie.DynamicPDF` | [![NuGet](https://img.shields.io/nuget/v/EquinoxLabs.SVGSharpie.DynamicPDF.svg)](https://www.nuget.org/packages/EquinoxLabs.SVGSharpie.DynamicPDF/) |
 
 ### Build Status
 

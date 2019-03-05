@@ -16,11 +16,11 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 
         private sealed class Visitor : SvgPaintServerVisitor<Color>
         {
-            private readonly PdfSpotColor _spotColorInk;
+            private readonly PdfSpotColor _spotColorOverride;
 
-            public Visitor(VectorElementPdfPageViewport pageViewport, SvgGraphicsElement element, float pageHeight, PdfSpotColor spotColorInk)
+            public Visitor(VectorElementPdfPageViewport pageViewport, SvgGraphicsElement element, float pageHeight, PdfSpotColor spotColorOverride)
             {
-                _spotColorInk = spotColorInk;
+                _spotColorOverride = spotColorOverride;
                 _pageViewport = pageViewport ?? throw new ArgumentNullException(nameof(pageViewport));
                 _element = element ?? throw new ArgumentNullException(nameof(element));
                 _pageHeight = pageHeight;
@@ -30,16 +30,16 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
                 => throw new NotSupportedException($"SVG paint server '{paintServer?.GetType().Name}' is not supported");
 
             public override Color VisitSolidColorPaintServer(SvgSolidColorPaintServer paintServer)
-                => paintServer.Color.ToPdfColor(_spotColorInk);
+                => paintServer.Color.ToPdfColor(_spotColorOverride);
 
             public override Color VisitRadialGradientPaintServer(SvgRadialGradientPaintServer paintServer)
             {
-                if (CheckInvalidGradientPaintServer(paintServer, _spotColorInk, out var color))
+                if (CheckInvalidGradientPaintServer(paintServer, _spotColorOverride, out var color))
                 {
                     return color;
                 }
 
-                var stops = ConvertStops(paintServer.Stops, _spotColorInk);
+                var stops = ConvertStops(paintServer.Stops, _spotColorOverride);
 
                 var fx = paintServer.FocalX;
                 var fy = paintServer.FocalY;
@@ -74,7 +74,7 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 
             public override Color VisitLinearGradientPaintServer(SvgLinearGradientPaintServer paintServer)
             {
-                if (CheckInvalidGradientPaintServer(paintServer, _spotColorInk, out var color))
+                if (CheckInvalidGradientPaintServer(paintServer, _spotColorOverride, out var color))
                 {
                     return color;
                 }
@@ -104,7 +104,7 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 
                 var domainRect = new RectangleF(x1, y1, width: x2 - x1, height: y2 - y1);
 
-                var stops = ConvertStops(paintServer.Stops, _spotColorInk);
+                var stops = ConvertStops(paintServer.Stops, _spotColorOverride);
                 return new LinearGradientShadingColor(pdfPagePlacementRect, domainRect, stops);
             }
 

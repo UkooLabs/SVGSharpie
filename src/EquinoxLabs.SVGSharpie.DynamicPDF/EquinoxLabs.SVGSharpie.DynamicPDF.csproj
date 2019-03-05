@@ -2,12 +2,12 @@
 
   <PropertyGroup>
 
-    <AssemblyTitle>EquinoxLabs.SVGSharpie.ImageSharp</AssemblyTitle>
+    <AssemblyTitle>EquinoxLabs.SVGSharpie.DynamicPDF</AssemblyTitle>
     <Authors>EquinoxLabs and contributors</Authors>
     <Company>Equinox Labs</Company>
     <Copyright>Copyright (c) Equinox Labs and contributors.</Copyright>
-    <Product>EquinoxLabs.SVGSharpie.ImageSharp</Product>
-    <Description>A cross-platform library for rendering SVG files using SVGSharpie and ImageSharp; written in C#</Description>
+    <Product>EquinoxLabs.SVGSharpie.DynamicPDF</Product>
+    <Description>A cross-platform library for rendering SVG files using SVGSharpie and DynamicPDF; written in C#</Description>
     <NeutralLanguage>en</NeutralLanguage>
 
     <VersionPrefix Condition="$(packageversion) != ''">$(packageversion)</VersionPrefix>
@@ -17,7 +17,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>EquinoxLabs.SVGSharpie.DynamicPDF</AssemblyName>
     <PackageId>EquinoxLabs.SVGSharpie.DynamicPDF</PackageId>
-    <PackageTags>SVG Render Core ImageSharp</PackageTags>
+    <PackageTags>SVG Render Core DynamicPDF</PackageTags>
     <PackageIconUrl>https://raw.githubusercontent.com/equinox2k/SVGSharpie/master/icons/logo-128.png</PackageIconUrl>
     <PackageProjectUrl>https://github.com/equinox2k/SVGSharpie</PackageProjectUrl>
     <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>

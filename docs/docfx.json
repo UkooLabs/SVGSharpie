@@ -37,6 +37,25 @@
       { 
         "TargetFramework": "netstandard1.3" 
       }
+    },
+    {
+      "src": [
+        {
+          "files": [
+            "src/EquinoxLabs.SVGSharpie.DynamicPDF/EquinoxLabs.SVGSharpie.DynamicPDF.csproj"
+          ],
+          "exclude": [
+            "obj/**",
+            "_site/**"
+          ],
+          "cwd": ".."
+        }
+      ],
+      "dest": "imagesharp",
+      "properties": 
+      { 
+        "TargetFramework": "net472" 
+      }
     }
   ],
   "build": {
@@ -57,6 +76,17 @@
           "imagesharp/**.yml",
           "imagesharp/*.md",
           "imagesharp/toc.yml"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      },
+      {
+        "files": [
+          "dynamicpdf/**.yml",
+          "dynamicpdf/*.md",
+          "dynamicpdf/toc.yml"
         ],
         "exclude": [
           "obj/**",

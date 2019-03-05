@@ -120,3 +120,6 @@ if ($LASTEXITCODE ){ Exit $LASTEXITCODE }
 
 dotnet pack ./src/EquinoxLabs.SVGSharpie.ImageSharp/ -c Release --output ../../artifacts --no-build  /p:packageversion=$version
 if ($LASTEXITCODE ){ Exit $LASTEXITCODE }
+
+dotnet pack ./src/EquinoxLabs.SVGSharpie.DynamicPDF/ -c Release --output ../../artifacts --no-build  /p:packageversion=$version
+if ($LASTEXITCODE ){ Exit $LASTEXITCODE }

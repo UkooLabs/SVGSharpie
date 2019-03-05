@@ -15,7 +15,7 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
     /// </summary>
     internal sealed class SvgPathSegToDynamicPdfPathsConverter : SvgPathSegVisitor
     {
-        private readonly PdfSpotColor _spotColorInk;
+        private readonly PdfSpotColor _spotColorOverride;
 
         public List<Path> Paths { get; } = new List<Path>();
 
@@ -23,9 +23,9 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
         /// Initializes a new instance of <see cref="SvgPathSegToDynamicPdfPathsConverter"/> using the specified <see cref="graphicsElement"/> 
         /// for the styling properties of the resulting paths
         /// </summary>
-        public SvgPathSegToDynamicPdfPathsConverter(SvgGraphicsElement graphicsElement, VectorElementPdfPageViewport pageViewport, float pageHeight, PdfSpotColor spotColorInk)
+        public SvgPathSegToDynamicPdfPathsConverter(SvgGraphicsElement graphicsElement, VectorElementPdfPageViewport pageViewport, float pageHeight, PdfSpotColor spotColorOverride)
         {
-            _spotColorInk = spotColorInk;
+            _spotColorOverride = spotColorOverride;
             _pageViewport = pageViewport;
             _pageHeight = pageHeight;
             SetFillStyle(graphicsElement);
@@ -43,7 +43,7 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
             var style = graphicsElement?.Style;
             _fillEvenOdd = style?.FillRule == SvgFillRule.EvenOdd;
             _fillColor = graphicsElement != null && _pageViewport != null
-                ? SvgPaintServerToDynamicPdfColorConverter.ConvertToColor(graphicsElement.CreateFillPaintServer(), _pageViewport, _pageHeight, graphicsElement, _spotColorInk)
+                ? SvgPaintServerToDynamicPdfColorConverter.ConvertToColor(graphicsElement.CreateFillPaintServer(), _pageViewport, _pageHeight, graphicsElement, _spotColorOverride)
                 : null;
         }
 
@@ -51,7 +51,7 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
         {
             var style = graphicsElement?.Style;
             _strokeColor = graphicsElement != null && _pageViewport != null
-                ? SvgPaintServerToDynamicPdfColorConverter.ConvertToColor(graphicsElement.CreateStrokePaintServer(), _pageViewport, _pageHeight, graphicsElement, _spotColorInk)
+                ? SvgPaintServerToDynamicPdfColorConverter.ConvertToColor(graphicsElement.CreateStrokePaintServer(), _pageViewport, _pageHeight, graphicsElement, _spotColorOverride)
                 : null;
             _strokeWidth = _strokeColor != null ? graphicsElement?.StrokeWidth ?? 0 : 0;
             _lineJoin = style?.StrokeLineJoin.ConvertToDynamicPdf() ?? LineJoin.Miter;
