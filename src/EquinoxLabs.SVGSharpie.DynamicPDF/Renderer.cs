@@ -7,7 +7,7 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF
     public static class Renderer
     {
 
-        public static PageElement CreateSvgImagePageElement(SvgDocument document, Rectangle bounds, HorizontalAlignment horizontalAlignment, VerticalAlignment verticalAlignment, PdfSpotColor spotColorInk)
+        public static PageElement CreateSvgImagePageElement(SvgDocument document, Rectangle bounds, HorizontalAlignment horizontalAlignment, VerticalAlignment verticalAlignment, PdfSpotColor spotColorOverride)
         {
             var svg = document.RootElement;
             var boundsWidth = (float)bounds.Width;
@@ -29,7 +29,7 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF
             }
 
             var svgElement = new SvgPageElement(document, bounds, horizontalAlignment, verticalAlignment);
-            svgElement.SpotColorOveride = spotColorInk;
+            svgElement.SpotColorOveride = spotColorOverride;
             var shouldClip = horizontalAlignment == HorizontalAlignment.Stretch || verticalAlignment == VerticalAlignment.Stretch;
             return shouldClip ? (PageElement)new ClippingGroup(bounds, svgElement) : svgElement;
         }
