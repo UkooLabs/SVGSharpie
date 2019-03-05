@@ -6,7 +6,7 @@ using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.IO;
 using PdfColor = ceTe.DynamicPDF.Color;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements.Shading
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core.Shading
 {
     internal abstract class GradientShadingColor<T> : GradientShadingColor, IEquatable<T>
         where T : GradientShadingColor<T>

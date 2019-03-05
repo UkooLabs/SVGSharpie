@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.PageElements;
-using EquinoxLabs.SVGSharpie;
-using EquinoxLabs.SVGSharpie.DynamicPDF;
 using EquinoxLabs.SVGSharpie.DynamicPDF.Extensions;
 using PdfSpotColor = ceTe.DynamicPDF.SpotColor;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
     /// <inheritdoc />
     /// <summary>

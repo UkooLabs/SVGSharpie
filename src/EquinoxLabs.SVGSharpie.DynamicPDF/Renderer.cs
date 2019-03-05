@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ceTe.DynamicPDF;
-using PNI.Apollo.Render.Services.DynamicPdf.PageElements;
+﻿using ceTe.DynamicPDF;
+using EquinoxLabs.SVGSharpie.DynamicPDF.Core;
 using PdfSpotColor = ceTe.DynamicPDF.SpotColor;
 
 namespace EquinoxLabs.SVGSharpie.DynamicPDF
 {
-    public static class SvgImageRenderer
+    public static class Renderer
     {
 
         public static PageElement CreateSvgImagePageElement(SvgDocument document, Rectangle bounds, HorizontalAlignment horizontalAlignment, VerticalAlignment verticalAlignment, PdfSpotColor spotColorInk)

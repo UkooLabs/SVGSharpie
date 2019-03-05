@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.PageElements;
-//using PNI.Apollo.Render.Services.DynamicPdf.Extensions;
-using EquinoxLabs.SVGSharpie;
-using EquinoxLabs.SVGSharpie.DynamicPDF;
 using PdfSpotColor = ceTe.DynamicPDF.SpotColor;
+using EquinoxLabs.SVGSharpie.DynamicPDF.Extensions;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
     /// <summary>
     /// Transforms path segments composed only of <see cref="SvgPathSegCurvetoCubicAbs"/>, <see cref="SvgPathSegLinetoAbs"/> 

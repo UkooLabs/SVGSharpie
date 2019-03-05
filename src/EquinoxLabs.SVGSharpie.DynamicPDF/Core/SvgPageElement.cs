@@ -2,10 +2,9 @@
 using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.IO;
 using ceTe.DynamicPDF.PageElements;
-using EquinoxLabs.SVGSharpie;
 using PdfSpotColor = ceTe.DynamicPDF.SpotColor;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
     /// <summary>
     /// Represents a DynamicPdf graphical <see cref="PageElement"/> where the 
@@ -29,7 +28,7 @@ namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
 
         public PdfSpotColor SpotColorOveride { get; set; }
 
-        public SvgPageElement(SvgDocument svgDocument, EquinoxLabs.SVGSharpie.DynamicPDF.Rectangle bounds, HorizontalAlignment horizontalAlignment = HorizontalAlignment.Center, VerticalAlignment verticalAlignment = VerticalAlignment.Center)
+        public SvgPageElement(SvgDocument svgDocument, Rectangle bounds, HorizontalAlignment horizontalAlignment = HorizontalAlignment.Center, VerticalAlignment verticalAlignment = VerticalAlignment.Center)
             : this(svgDocument, (float)bounds.X, (float)bounds.Y, (float)bounds.Width, (float)bounds.Height, horizontalAlignment, verticalAlignment)
         {
         }

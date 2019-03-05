@@ -2,7 +2,7 @@
 using ceTe.DynamicPDF.IO;
 using ceTe.DynamicPDF.PageElements;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
     /// <summary>
     /// Customized PDF path renderer, the base <see cref="Path"/> doesn't support fill rules other than non-zero

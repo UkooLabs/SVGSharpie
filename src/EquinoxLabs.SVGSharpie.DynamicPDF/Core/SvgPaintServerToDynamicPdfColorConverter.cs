@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
-//using PNI.Apollo.Render.Services.DynamicPdf.Extensions;
-using PNI.Apollo.Render.Services.DynamicPdf.PageElements.Shading;
-using EquinoxLabs.SVGSharpie;
+using EquinoxLabs.SVGSharpie.DynamicPDF.Extensions;
 using Color = ceTe.DynamicPDF.Color;
-using EquinoxLabs.SVGSharpie.DynamicPDF;
-using ceTe.DynamicPDF;
+using EquinoxLabs.SVGSharpie.DynamicPDF.Core.Shading;
 using PdfSpotColor = ceTe.DynamicPDF.SpotColor;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
     internal sealed class SvgPaintServerToDynamicPdfColorConverter
     {

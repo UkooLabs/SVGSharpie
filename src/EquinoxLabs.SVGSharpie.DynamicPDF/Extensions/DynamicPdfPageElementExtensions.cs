@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.PageElements;
 
-namespace EquinoxLabs.SVGSharpie.DynamicPDF
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Extensions
 {
     internal static class DynamicPdfPageElementExtensions
     {

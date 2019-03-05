@@ -1,53 +1,8 @@
 ﻿using System;
 using System.Drawing;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
-    public enum VerticalAlignment
-    {
-        /// <summary>
-        /// The child element is aligned to the top of the parent's layout slot.
-        /// </summary>
-        Top,
-        /// <summary>
-        /// The child element is aligned to the center of the parent's layout slot.
-        /// </summary>
-        Center,
-        /// <summary>
-        /// The child element is aligned to the bottom of the parent's layout slot.
-        /// </summary>
-        Bottom,
-        /// <summary>
-        /// The child element is stretched to fill the parent's layout slot.
-        /// </summary>
-        Stretch
-    }
-
-
-    /// <summary>
-    /// Describes how a child element is horizontally positioned or stretched within a parent elements layout
-    /// </summary>
-    public enum HorizontalAlignment
-    {
-        /// <summary>
-        /// An element aligned to the left of the layout slot for the parent element.
-        /// </summary>
-        Left,
-        /// <summary>
-        /// An element aligned to the center of the layout slot for the parent element.
-        /// </summary>
-        Center,
-        /// <summary>
-        /// An element aligned to the right of the layout slot for the parent element.
-        /// </summary>
-        Right,
-        /// <summary>
-        /// An element stretched to fill the entire layout slot of the parent element.
-        /// </summary>
-        Stretch
-    }
-
-
     internal sealed class VectorElementPdfPageViewport
     {
         /// <summary>
@@ -79,11 +34,6 @@ namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
         /// Gets a value indicating whether a clipping group is required around the element
         /// </summary>
         public bool ClippingGroupRequired { get; }
-
-        //public VectorElementPdfPageViewport(float contentWidth, float contentHeight, VectorElement element)
-        //    : this(contentWidth, contentHeight, (float)element.Bounds.X, (float)element.Bounds.Y, (float)element.Bounds.Width, (float)element.Bounds.Height, element.HorizontalAlignment, element.VerticalAlignment)
-        //{
-        //}
 
         public VectorElementPdfPageViewport(float contentWidth, float contentHeight, float x, float y, float width, float height, HorizontalAlignment horizontalAlignment, VerticalAlignment verticalAlignment)
         {

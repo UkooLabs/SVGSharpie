@@ -1,7 +1,7 @@
 ﻿using ceTe.DynamicPDF.IO;
 using ceTe.DynamicPDF.PageElements;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
     /// <summary>
     /// Represents a 'closepath' sub path command and writes the PDF 'h' operator

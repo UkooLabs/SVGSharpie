@@ -32,6 +32,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CmykColor.cs" />
+    <Compile Remove="Color.cs" />
+    <Compile Remove="DynamicPdfColorConverter.cs" />
+    <Compile Remove="Point.cs" />
+    <Compile Remove="RgbColor.cs" />
+    <Compile Remove="Size.cs" />
+    <Compile Remove="SpotColor.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\EquinoxLabs.SVGSharpie\EquinoxLabs.SVGSharpie.csproj" />
   </ItemGroup>
 

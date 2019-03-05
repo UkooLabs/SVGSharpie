@@ -1,4 +1,4 @@
-﻿namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements.Shading
+﻿namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core.Shading
 {
     internal enum ShadingType
     {

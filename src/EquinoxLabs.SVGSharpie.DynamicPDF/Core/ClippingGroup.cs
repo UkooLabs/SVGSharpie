@@ -1,9 +1,8 @@
 ﻿using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.IO;
 using ceTe.DynamicPDF.PageElements;
-using Rectangle = EquinoxLabs.SVGSharpie.DynamicPDF.Rectangle;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
     /// <summary>
     /// Draws a rectangular clipping group around the child elements.  All children will be clipped to the 
@@ -18,8 +17,9 @@ namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
         /// <param name="clippingRectangle">the clipping rectangle to which the child elements will be clipped</param>
         /// <param name="children">the child elements to add to the clipping group</param>
         public ClippingGroup(Rectangle clippingRectangle, params PageElement[] children)
-            : this(clippingRectangle.X, clippingRectangle.Y, clippingRectangle.Right, clippingRectangle.Bottom, children)
+            : this(clippingRectangle.X, clippingRectangle.Y, clippingRectangle.X + clippingRectangle.Width, clippingRectangle.Y + clippingRectangle.Height, children)
         {
+
         }
 
         /// <summary>

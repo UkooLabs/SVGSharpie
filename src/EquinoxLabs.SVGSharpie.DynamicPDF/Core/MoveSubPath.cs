@@ -1,7 +1,7 @@
 ﻿using ceTe.DynamicPDF.IO;
 using ceTe.DynamicPDF.PageElements;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
     /// <summary>
     /// Represents a 'moveto' sub path command, when added to a <see cref="T:ceTe.DynamicPDF.PageElements.Path" />, is used to 

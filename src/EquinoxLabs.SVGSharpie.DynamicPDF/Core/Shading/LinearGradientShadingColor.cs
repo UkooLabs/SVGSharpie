@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements.Shading
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core.Shading
 {
     internal sealed class LinearGradientShadingColor : GradientShadingColor<LinearGradientShadingColor>
     {

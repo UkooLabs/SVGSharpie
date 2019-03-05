@@ -1,10 +1,9 @@
 ﻿using System;
 using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.IO;
-using EquinoxLabs.SVGSharpie;
 using PdfSpotColor = ceTe.DynamicPDF.SpotColor;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core
 {
     internal sealed class SvgClipPathPageElement : PageElement
     {

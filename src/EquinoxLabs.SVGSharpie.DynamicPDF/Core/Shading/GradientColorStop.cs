@@ -2,7 +2,7 @@
 using ceTe.DynamicPDF;
 using PdfColor = ceTe.DynamicPDF.Color;
 
-namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements.Shading
+namespace EquinoxLabs.SVGSharpie.DynamicPDF.Core.Shading
 {
     internal struct GradientColorStop : IEquatable<GradientColorStop>
     {
