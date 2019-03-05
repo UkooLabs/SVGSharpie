@@ -51,7 +51,7 @@
           "cwd": ".."
         }
       ],
-      "dest": "imagesharp",
+      "dest": "dynamicpdf",
       "properties": 
       { 
         "TargetFramework": "net472" 
