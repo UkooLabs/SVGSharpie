@@ -14,11 +14,11 @@ namespace EquinoxLabs.SVGSharpie.DynamicPDF
            return  DynamicPdfColorConverter.ToPdfColor(color, spotColorInk);
         }
 
-        public static DeviceColor ToPdfColor(this SvgColor color, PdfSpotColor spotColorOverride)
+        public static PdfColor ToPdfColor(this SvgColor color, PdfSpotColor spotColorOverride)
         {
             if (spotColorOverride != null)
             {
-                //return spotColorOverride;
+                return spotColorOverride;
             }
             return new ceTe.DynamicPDF.RgbColor(color.R, color.G, color.B);
         }

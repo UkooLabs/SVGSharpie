@@ -1,15 +1,16 @@
 ﻿using System;
 using ceTe.DynamicPDF;
+using PdfColor = ceTe.DynamicPDF.Color;
 
 namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements.Shading
 {
     internal struct GradientColorStop : IEquatable<GradientColorStop>
     {
-        public DeviceColor Color { get; }
+        public PdfColor Color { get; }
 
         public float Offset { get; }
 
-        public GradientColorStop(DeviceColor color, float offset)
+        public GradientColorStop(PdfColor color, float offset)
         {
             Color = color ?? throw new ArgumentNullException(nameof(color));
             Offset = offset;

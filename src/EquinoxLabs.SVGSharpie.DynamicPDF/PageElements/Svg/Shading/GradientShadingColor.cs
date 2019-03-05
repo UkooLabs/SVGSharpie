@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using ceTe.DynamicPDF;
 using ceTe.DynamicPDF.IO;
+using PdfColor = ceTe.DynamicPDF.Color;
 
 namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements.Shading
 {
@@ -201,7 +202,7 @@ namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements.Shading
                         else if (_shadingColor.Stops.Count == 2)
                         {
                             var stop1 = _shadingColor.Stops[0];
-                            var stop2 = _shadingColor.Stops[1];
+                            var stop2 = _shadingColor.Stops[1];                            
                             WriteLinearColorInterpolationFunction(writer, stop1.Color, stop2.Color);
                         }
                         else
@@ -264,11 +265,11 @@ namespace PNI.Apollo.Render.Services.DynamicPdf.PageElements.Shading
                 writer.WriteDictionaryClose();
             }
 
-            private static void WriteLinearColorInterpolationFunction(DocumentWriter writer, DeviceColor color1, DeviceColor color2)
+            private static void WriteLinearColorInterpolationFunction(DocumentWriter writer, PdfColor color1, PdfColor color2)
             {
                 const int interpolationFunctionType = 2;
 
-                void WriteColorArray(DeviceColor color)
+                void WriteColorArray(PdfColor color)
                 {
                     writer.WriteArrayOpen();
                     switch (color)
