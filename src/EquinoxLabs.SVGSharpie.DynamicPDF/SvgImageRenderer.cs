@@ -1,54 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ceTe.DynamicPDF;
+using PNI.Apollo.Render.Services.DynamicPdf.PageElements;
+using PdfSpotColor = ceTe.DynamicPDF.SpotColor;
 
 namespace EquinoxLabs.SVGSharpie.DynamicPDF
 {
     public static class SvgImageRenderer
     {
-        public static void RenderFromString(Page page, string content)
+
+        public static PageElement CreateSvgImagePageElement(SvgDocument document, Rectangle bounds, HorizontalAlignment horizontalAlignment, VerticalAlignment verticalAlignment, PdfSpotColor spotColorInk)
         {
-            var document = SvgDocument.Parse(content);
-            RenderInner(page, document, null, null);
-        }
+            var svg = document.RootElement;
+            var boundsWidth = (float)bounds.Width;
+            var boundsHeight = (float)bounds.Height;
+            if (svg.WidthAsLength == null || svg.HeightAsLength == null)
+            {
+                svg.Width = boundsWidth;
+                svg.Height = boundsHeight;
+            }
 
-        public static void RenderFromString(Page page, string content, int width, int height)
-        {
-            var document = SvgDocument.Parse(content);
-            RenderInner(page, document, width, height);
-        }
+            if (svg.WidthAsLength?.LengthType == SvgLengthType.Percentage)
+            {
+                svg.Width = boundsWidth * (svg.WidthAsLength?.ValueInSpecifiedUnits / 100);
+            }
 
-        public static void RenderFromDocument(Page page, SvgDocument document)
-        {
-            RenderInner(page, document, null, null);
-        }
+            if (svg.HeightAsLength?.LengthType == SvgLengthType.Percentage)
+            {
+                svg.Height = boundsHeight * (svg.HeightAsLength?.ValueInSpecifiedUnits / 100);
+            }
 
-        public static void RenderFromDocument(Page page, SvgDocument document, int width, int height)
-        {
-            RenderInner(page, document, width, height);
-        }
-
-        private static void RenderInner(Page page, SvgDocument document, int? targetWidth, int? targetHeight)
-        {
-            //float? width = targetWidth ?? document.RootElement.ViewWidth;
-            //float? height = targetHeight ?? document.RootElement.ViewHeight;
-
-            //if (!width.HasValue || !height.HasValue)
-            //{
-            //    throw new Exception("Svg does not specify a size set one.");
-            //}
-
-            //var image = new Image<TPixel>((int)Math.Ceiling(width.Value), (int)Math.Ceiling(height.Value));
-
-            //image.Mutate(x =>
-            //{
-            //    var renderer = new SvgDocumentRenderer<TPixel>(image.Size(), x);
-            //    document.RootElement.Accept(renderer);
-            //});
-            //return image;
+            var svgElement = new SvgPageElement(document, bounds, horizontalAlignment, verticalAlignment);
+            svgElement.SpotColorOveride = spotColorInk;
+            var shouldClip = horizontalAlignment == HorizontalAlignment.Stretch || verticalAlignment == VerticalAlignment.Stretch;
+            return shouldClip ? (PageElement)new ClippingGroup(bounds, svgElement) : svgElement;
         }
     }
 }
