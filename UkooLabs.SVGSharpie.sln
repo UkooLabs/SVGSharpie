@@ -1,0 +1,48 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2016
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UkooLabs.SVGSharpie", "src\UkooLabs.SVGSharpie\UkooLabs.SVGSharpie.csproj", "{3A4E9949-3F70-4C63-BC13-EB296825C7C6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UkooLabs.SVGSharpie.ImageSharp", "src\UkooLabs.SVGSharpie.ImageSharp\UkooLabs.SVGSharpie.ImageSharp.csproj", "{E4E9C756-3BDE-46B4-AEAD-9837A7316746}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UkooLabs.SVGSharpie.ImageSharp.Tests", "tests\UkooLabs.SvgSharpie.ImageSharp.Tests\UkooLabs.SVGSharpie.ImageSharp.Tests.csproj", "{FB682242-6C61-4A32-B5AA-FB85B9B95D83}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UkooLabs.SVGSharpie.DynamicPDF", "src\UkooLabs.SVGSharpie.DynamicPDF\UkooLabs.SVGSharpie.DynamicPDF.csproj", "{905D48F1-195E-4A68-B1BA-A60B72EE3737}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UkooLabs.SVGSharpie.DynamicPDF.Tests", "tests\UkooLabs.SVGSharpie.DynamicPDF.Tests\UkooLabs.SVGSharpie.DynamicPDF.Tests.csproj", "{EC1CE2CF-698A-4D3D-BBD4-858DB05CD34F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3A4E9949-3F70-4C63-BC13-EB296825C7C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A4E9949-3F70-4C63-BC13-EB296825C7C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A4E9949-3F70-4C63-BC13-EB296825C7C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A4E9949-3F70-4C63-BC13-EB296825C7C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4E9C756-3BDE-46B4-AEAD-9837A7316746}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4E9C756-3BDE-46B4-AEAD-9837A7316746}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4E9C756-3BDE-46B4-AEAD-9837A7316746}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4E9C756-3BDE-46B4-AEAD-9837A7316746}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB682242-6C61-4A32-B5AA-FB85B9B95D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB682242-6C61-4A32-B5AA-FB85B9B95D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB682242-6C61-4A32-B5AA-FB85B9B95D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB682242-6C61-4A32-B5AA-FB85B9B95D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{905D48F1-195E-4A68-B1BA-A60B72EE3737}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{905D48F1-195E-4A68-B1BA-A60B72EE3737}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{905D48F1-195E-4A68-B1BA-A60B72EE3737}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{905D48F1-195E-4A68-B1BA-A60B72EE3737}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC1CE2CF-698A-4D3D-BBD4-858DB05CD34F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC1CE2CF-698A-4D3D-BBD4-858DB05CD34F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC1CE2CF-698A-4D3D-BBD4-858DB05CD34F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC1CE2CF-698A-4D3D-BBD4-858DB05CD34F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77DBD7A1-EDB3-454C-AC11-EF2E14552F91}
+	EndGlobalSection
+EndGlobal

@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/equinox2k/SVGSharpie/master/icons/logo-128.png)
+![](https://raw.githubusercontent.com/ukoolabs/SVGSharpie/master/icons/logo-128.png)
 
 # SVGSharpie 
 
@@ -16,9 +16,9 @@ Watch this space for news as development progresses.
 
 | Package Name                        | NuGet           |
 |-------------------------------------|-----------------|
-| `EquinoxLabs.SVGSharpie`            | [![NuGet](https://img.shields.io/nuget/v/EquinoxLabs.SVGSharpie.svg)](https://www.nuget.org/packages/EquinoxLabs.SVGSharpie/) |
-| `EquinoxLabs.SVGSharpie.ImageSharp` | [![NuGet](https://img.shields.io/nuget/v/EquinoxLabs.SVGSharpie.ImageSharp.svg)](https://www.nuget.org/packages/EquinoxLabs.SVGSharpie.ImageSharp/) |
-| `EquinoxLabs.SVGSharpie.DynamicPDF` | [![NuGet](https://img.shields.io/nuget/v/EquinoxLabs.SVGSharpie.DynamicPDF.svg)](https://www.nuget.org/packages/EquinoxLabs.SVGSharpie.DynamicPDF/) |
+| `UkooLabs.SVGSharpie`            | [![NuGet](https://img.shields.io/nuget/v/UkooLabs.SVGSharpie.svg)](https://www.nuget.org/packages/UkooLabs.SVGSharpie/) |
+| `UkooLabs.SVGSharpie.ImageSharp` | [![NuGet](https://img.shields.io/nuget/v/UkooLabs.SVGSharpie.ImageSharp.svg)](https://www.nuget.org/packages/UkooLabs.SVGSharpie.ImageSharp/) |
+| `UkooLabs.SVGSharpie.DynamicPDF` | [![NuGet](https://img.shields.io/nuget/v/UkooLabs.SVGSharpie.DynamicPDF.svg)](https://www.nuget.org/packages/UkooLabs.SVGSharpie.DynamicPDF/) |
 
 ### Build Status
 

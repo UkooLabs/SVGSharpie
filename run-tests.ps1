@@ -46,7 +46,7 @@ if ( ($targetFramework -eq "netcoreapp2.1") -and ($env:CI -eq "True") -and ($is3
     $testRunnerCmd = ".\tests\CodeCoverage\CodeCoverage.cmd"
 }
 elseif ($targetFramework -eq "mono") {
-    $testDllPath = "$PSScriptRoot\tests\EquinoxLabs.SVGSharpie.ImageSharp.Tests\bin\Release\net462\EquinoxLabs.SVGSharpie.ImageSharp.Tests.dll"
+    $testDllPath = "$PSScriptRoot\tests\UkooLabs.SVGSharpie.ImageSharp.Tests\bin\Release\net462\UkooLabs.SVGSharpie.ImageSharp.Tests.dll"
     VerifyPath($testDllPath, "test dll missing:")
 
     $xunitRunnerPath = "${env:HOMEPATH}\.nuget\packages\xunit.runner.console\2.3.1\tools\net452\"
@@ -67,7 +67,7 @@ elseif ($targetFramework -eq "mono") {
     $testRunnerCmd = "& `"${monoPath}`" .\xunit.console.exe `"${testDllPath}`""
 }
 else {
-    cd .\tests\EquinoxLabs.SVGSharpie.ImageSharp.Tests
+    cd .\tests\UkooLabs.SVGSharpie.ImageSharp.Tests
     $xunitArgs = "-nobuild -c Release -framework $targetFramework"
 
     if ($targetFramework -eq "netcoreapp2.1") {

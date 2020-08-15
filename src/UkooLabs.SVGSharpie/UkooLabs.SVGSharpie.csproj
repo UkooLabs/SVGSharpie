@@ -1,0 +1,50 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+
+    <AssemblyTitle>UkooLabs.SVGSharpie</AssemblyTitle>
+    <Authors>UkooLabs and contributors</Authors>
+    <Company>Equinox Labs</Company>
+    <Copyright>Copyright (c) Equinox Labs and contributors.</Copyright>
+    <Product>UkooLabs.SVGSharpie</Product>
+    <Description>A cross-platform library for parsing SVG files; written in C#</Description>
+    <NeutralLanguage>en</NeutralLanguage>
+
+    <VersionPrefix Condition="$(packageversion) != ''">$(packageversion)</VersionPrefix>
+    <VersionPrefix Condition="$(packageversion) == ''">0.0.1</VersionPrefix>
+    <TargetFrameworks>netcoreapp2.1;netstandard1.3;netstandard2.0;net472</TargetFrameworks>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>UkooLabs.SVGSharpie</AssemblyName>
+    <PackageId>UkooLabs.SVGSharpie</PackageId>
+    <PackageTags>SVG Parser Core</PackageTags>
+    <PackageIconUrl>https://raw.githubusercontent.com/equinox2k/SVGSharpie/master/icons/logo-128.png</PackageIconUrl>
+    <PackageProjectUrl>https://github.com/equinox2k/SVGSharpie</PackageProjectUrl>
+    <PackageLicenseUrl>http://www.apache.org/licenses/LICENSE-2.0</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/equinox2k/SVGSharpie</RepositoryUrl>
+    <DebugType Condition="$(codecov) != ''">full</DebugType>
+    <DebugType Condition="$(codecov) == ''">portable</DebugType>
+    <DebugSymbols>True</DebugSymbols>
+    <Features>IOperation</Features>
+    <LangVersion>7.3</LangVersion>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Reflection.TypeExtensions" Version="4.5.1" />
+    <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XmlSerializer" Version="4.0.11" />
+  </ItemGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <LangVersion>Latest</LangVersion>
+  </PropertyGroup>
+</Project>
