@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace UkooLabs.SVGSharpie
 {
@@ -55,8 +56,8 @@ namespace UkooLabs.SVGSharpie
                     throw new Exception($"Invalid coordinate '{point}'");
                 }
 
-                coords.Add(float.Parse(point.Substring(0, signIndex)));
-                coords.Add(float.Parse(point.Substring(signIndex + 1)));
+                coords.Add(float.Parse(point.Substring(0, signIndex), CultureInfo.InvariantCulture));
+                coords.Add(float.Parse(point.Substring(signIndex + 1), CultureInfo.InvariantCulture));
             }
 
             AddCoordsToResult();

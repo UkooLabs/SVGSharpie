@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
@@ -25,7 +26,7 @@ namespace UkooLabs.SVGSharpie
             ["stroke-width"] = CreateParserAndSetterForNullable(v => new SvgLength(v, SvgLengthContext.Null), s => s.StrokeWidth),
             ["stroke-linecap"] = CreateXmlEnumParserAndSetter(s => s.StrokeLineCap),
             ["stroke-linejoin"] = CreateXmlEnumParserAndSetter(s => s.StrokeLineJoin),
-            ["stroke-miterlimit"] = CreateParserAndSetterForNullable(float.Parse, s => s.StrokeMiterLimit),
+            ["stroke-miterlimit"] = CreateParserAndSetterForNullable(s => float.Parse(s, CultureInfo.InvariantCulture), s => s.StrokeMiterLimit),
             ["visibility"] = CreateXmlEnumParserAndSetter(s => s.Visibility),
             ["stroke-opacity"] = CreateParserAndSetterForInheritableNumber(s => s.StrokeOpacity),
             ["stroke-dasharray"] = CreateParserAndSetter(v =>
@@ -60,7 +61,7 @@ namespace UkooLabs.SVGSharpie
                 }
                 else
                 {
-                    var parsed = Math.Max(0, Math.Min(1, float.Parse(v.Value)));
+                    var parsed = Math.Max(0, Math.Min(1, float.Parse(v.Value, CultureInfo.InvariantCulture)));
                     value = new StyleProperty<float>(parsed, v.IsImportant);
                 }
                 s.FillOpacity = value;
@@ -141,7 +142,7 @@ namespace UkooLabs.SVGSharpie
                 }
                 else
                 {
-                    var parsedValue = float.Parse(value.Value);
+                    var parsedValue = float.Parse(value.Value, CultureInfo.InvariantCulture);
                     StyleProperty<float>? propertyValue = new StyleProperty<float>(parsedValue, isImportant: value.IsImportant);
                     propertyInfo.SetValue(style, propertyValue);
                 }

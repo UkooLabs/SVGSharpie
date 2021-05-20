@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Text;
 
 namespace UkooLabs.SVGSharpie
@@ -53,7 +54,8 @@ namespace UkooLabs.SVGSharpie
                         buffer.Append(stream.Read());
                     }
 
-                    args[arg] = float.Parse(buffer.ToString());
+                    args[arg] = float.Parse(buffer.ToString(), CultureInfo.InvariantCulture);
+                    
                 }
 
                 result.Add(CreatePathSegment(command, isNewCommand, args));

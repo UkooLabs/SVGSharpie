@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Globalization;
+using System.Xml.Serialization;
 
 namespace UkooLabs.SVGSharpie
 {
@@ -86,10 +87,10 @@ namespace UkooLabs.SVGSharpie
 
             if (trimmed.EndsWith("%"))
             {
-                return float.Parse(trimmed.Substring(0, trimmed.Length - 1)) / 100;
+                return float.Parse(trimmed.Substring(0, trimmed.Length - 1), CultureInfo.InvariantCulture) / 100;
             }
 
-            return float.Parse(trimmed);
+            return float.Parse(trimmed, CultureInfo.InvariantCulture);
         }
     }
 }

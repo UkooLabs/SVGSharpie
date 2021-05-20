@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace UkooLabs.SVGSharpie
 {
@@ -56,11 +57,11 @@ namespace UkooLabs.SVGSharpie
             if (unit < 0)
             {
                 LengthType = SvgLengthType.Number;
-                ValueInSpecifiedUnits = float.Parse(value);
+                ValueInSpecifiedUnits = float.Parse(value, CultureInfo.InvariantCulture);
             }
             else
             {
-                ValueInSpecifiedUnits = float.Parse(value.Substring(0, unit));
+                ValueInSpecifiedUnits = float.Parse(value.Substring(0, unit), CultureInfo.InvariantCulture);
                 switch (value.Substring(unit).ToLowerInvariant())
                 {
                     case "%":

@@ -30,7 +30,7 @@ namespace UkooLabs.SVGSharpie
                         byte ParsePercent(string str)
                         {
                             var trimmed = str.Trim().TrimEnd('%');
-                            var percent = Math.Max(0, Math.Min(100, float.Parse(trimmed)));
+                            var percent = Math.Max(0, Math.Min(100, float.Parse(trimmed, CultureInfo.InvariantCulture)));
                             var value = Math.Floor(255 * (percent / 100));
                             return (byte)value;
                         }
