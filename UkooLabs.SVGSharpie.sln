@@ -6,7 +6,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UkooLabs.SVGSharpie", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UkooLabs.SVGSharpie.ImageSharp", "src\UkooLabs.SVGSharpie.ImageSharp\UkooLabs.SVGSharpie.ImageSharp.csproj", "{E4E9C756-3BDE-46B4-AEAD-9837A7316746}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UkooLabs.SVGSharpie.ImageSharp.Tests", "tests\UkooLabs.SvgSharpie.ImageSharp.Tests\UkooLabs.SVGSharpie.ImageSharp.Tests.csproj", "{FB682242-6C61-4A32-B5AA-FB85B9B95D83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UkooLabs.SVGSharpie.ImageSharp.Tests", "tests\UkooLabs.SVGSharpie.ImageSharp.Tests\UkooLabs.SVGSharpie.ImageSharp.Tests.csproj", "{FB682242-6C61-4A32-B5AA-FB85B9B95D83}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UkooLabs.SVGSharpie.DynamicPDF", "src\UkooLabs.SVGSharpie.DynamicPDF\UkooLabs.SVGSharpie.DynamicPDF.csproj", "{905D48F1-195E-4A68-B1BA-A60B72EE3737}"
 EndProject
