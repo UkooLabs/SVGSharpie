@@ -127,9 +127,9 @@ namespace UkooLabs.SVGSharpie
             set => ViewBox = string.IsNullOrEmpty(value) ? (SvgRect?)null : SvgRect.Parse(value);
         }
 
-        public float ViewWidth => ViewBox?.Width ?? (WidthAsLength?.Value ?? 0);
+        public float ViewWidth => WidthAsLength?.Value ?? (ViewBox?.Width ?? 0);
 
-        public float ViewHeight => ViewBox?.Height ?? (HeightAsLength?.Value ?? 0);
+        public float ViewHeight => HeightAsLength?.Value ?? (ViewBox?.Height ?? 0);
 
         public override string ToString() => $"<svg>{string.Join(string.Empty, Children)}</svg>";
 
