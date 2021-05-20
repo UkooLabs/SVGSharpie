@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace UkooLabs.SVGSharpie
 {
@@ -99,10 +100,10 @@ namespace UkooLabs.SVGSharpie
             }
             return new SvgRect
             (
-                float.Parse(values[0]),
-                float.Parse(values[1]),
-                float.Parse(values[2]),
-                float.Parse(values[3])
+                float.Parse(values[0], CultureInfo.InvariantCulture),
+                float.Parse(values[1], CultureInfo.InvariantCulture),
+                float.Parse(values[2], CultureInfo.InvariantCulture),
+                float.Parse(values[3], CultureInfo.InvariantCulture)
             );
         }
     }

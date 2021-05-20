@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -57,7 +58,7 @@ namespace UkooLabs.SVGSharpie
             {
                 throw new Exception($"Invalid matrix transformation arguments '{args}'");
             }
-            var values = split.Select(float.Parse).ToArray();
+            var values = split.Select(x => float.Parse(x, CultureInfo.InvariantCulture)).ToArray();
             return new SvgTransform(SvgTransformType.Matrix, new SvgMatrix(values));
         }
 
@@ -69,8 +70,8 @@ namespace UkooLabs.SVGSharpie
             {
                 throw new Exception($"Invalid scale transformation arguments '{args}'");
             }
-            var x = float.Parse(split[0]);
-            var y = split.Length == 2 ? float.Parse(split[1]) : x;
+            var x = float.Parse(split[0], CultureInfo.InvariantCulture);
+            var y = split.Length == 2 ? float.Parse(split[1], CultureInfo.InvariantCulture) : x;
             return new SvgTransform(SvgTransformType.Scale, SvgMatrix.CreateScale(x, y));
         }
 
@@ -90,9 +91,9 @@ namespace UkooLabs.SVGSharpie
             {
                 throw new Exception($"Invalid rotate transformation arguments '{args}'");
             }
-            var angle = float.Parse(split[0]);
-            var cx = split.Length > 1 ? (float?)float.Parse(split[1]) : null;
-            var cy = split.Length > 1 ? (float?)float.Parse(split[2]) : null;
+            var angle = float.Parse(split[0], CultureInfo.InvariantCulture);
+            var cx = split.Length > 1 ? (float?)float.Parse(split[1], CultureInfo.InvariantCulture) : null;
+            var cy = split.Length > 1 ? (float?)float.Parse(split[2], CultureInfo.InvariantCulture) : null;
             var matrix = SvgMatrix.CreateRotate(angle, cx, cy);
             return new SvgTransform(SvgTransformType.Rotate, matrix, angle);
         }
@@ -105,8 +106,8 @@ namespace UkooLabs.SVGSharpie
             {
                 throw new Exception($"Invalid translate transformation arguments '{args}'");
             }
-            var tx = float.Parse(split[0]);
-            var ty = split.Length == 2 ? float.Parse(split[1]) : tx;
+            var tx = float.Parse(split[0], CultureInfo.InvariantCulture);
+            var ty = split.Length == 2 ? float.Parse(split[1], CultureInfo.InvariantCulture) : tx;
             return new SvgTransform(SvgTransformType.Translate, SvgMatrix.CreateTranslate(tx, ty));
         }
 
